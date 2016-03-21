@@ -17,6 +17,13 @@ architecture tb_arq of tb is
 		);
 	end component contBCD;
 
+	component deco_7s is
+	port(
+		num: in std_logic_vector(3 downto 0);		-- Numero BCD a convertir
+		display: out std_logic_vector(6 downto 0) -- 7 patas del display en orden abcdefg
+	);
+	end component deco_7s;
+
 	component freq_div is
 		generic (N : natural);
 		port(
@@ -28,9 +35,11 @@ architecture tb_arq of tb is
 	
 	signal clk_t, rst_t: std_logic := '0';
 	signal clk_out_t: std_logic;
-	signal digitos_t: std_logic_vector(7 downto 0);
+	signal digitos_t: std_logic_vector(3 downto 0);
 	signal c_out_t: std_logic;
 	signal ena_t: std_logic := '1';
+	
+	signal display_t: std_logic_vector(6 downto 0);
 	
 begin
 	
@@ -43,13 +52,19 @@ begin
 		);
 	
 	myBCD: contBCD
-		generic map( N => 2)
+		generic map( N => 1)
 		port map(
 			clk => clk_t,
 			rst => rst_t,
 			ena => clk_out_t,
 			c_out => c_out_t,
 			digitos => digitos_t
+		);
+		
+	myDecoder: deco_7s 
+		port map(
+		num => digitos_t,
+		display => display_t
 		);
 	
 	clk_t <= not clk_t after 5 ns;

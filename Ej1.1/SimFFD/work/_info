@@ -12,20 +12,20 @@ Effd
 Z0 w1457636796
 Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z3 dC:/YO/Facu/Ej_simulac_modelsim/Ej1.1/SimFFD
-Z4 8C:/YO/Facu/Ej_simulac_modelsim/Ej1.1/FFD.vhd
-Z5 FC:/YO/Facu/Ej_simulac_modelsim/Ej1.1/FFD.vhd
+Z3 dC:/YO/Facu/Sist_dig/Ej1.1/SimFFD
+Z4 8C:/YO/Facu/Sist_dig/Ej1.1/FFD.vhd
+Z5 FC:/YO/Facu/Sist_dig/Ej1.1/FFD.vhd
 l0
 L4
 V_2RXWU18Qc:;9V_Nhi6?J0
 !s100 <ENKm4KMPj7k@1c1UmNUa0
-Z6 OP;C;10.3d;59
+Z6 OP;C;10.4a;61
 32
-Z7 !s110 1457901188
+Z7 !s110 1458347996
 !i10b 1
-Z8 !s108 1457901188.375000
-Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Ej_simulac_modelsim/Ej1.1/FFD.vhd|
-Z10 !s107 C:/YO/Facu/Ej_simulac_modelsim/Ej1.1/FFD.vhd|
+Z8 !s108 1458347996.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/Ej1.1/FFD.vhd|
+Z10 !s107 C:/YO/Facu/Sist_dig/Ej1.1/FFD.vhd|
 !i113 1
 Z11 o-work work -2002 -explicit -O0
 Z12 tExplicit 1
@@ -52,37 +52,37 @@ Z13 w1457636678
 R1
 R2
 R3
-Z14 8C:/YO/Facu/Ej_simulac_modelsim/Ej1.1/FFD_tb.vhd
-Z15 FC:/YO/Facu/Ej_simulac_modelsim/Ej1.1/FFD_tb.vhd
+Z14 8C:/YO/Facu/Sist_dig/Ej1.1/FFD_tb.vhd
+Z15 FC:/YO/Facu/Sist_dig/Ej1.1/FFD_tb.vhd
 l0
 L4
 V=ZFJzN3H^<K_I4mOM3LS>1
 !s100 3gQJz8N>TY538N3L>?1^a0
 R6
 32
-Z16 !s110 1457901189
+R7
 !i10b 1
-Z17 !s108 1457901189.002000
-Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Ej_simulac_modelsim/Ej1.1/FFD_tb.vhd|
-Z19 !s107 C:/YO/Facu/Ej_simulac_modelsim/Ej1.1/FFD_tb.vhd|
+R8
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/Ej1.1/FFD_tb.vhd|
+Z17 !s107 C:/YO/Facu/Sist_dig/Ej1.1/FFD_tb.vhd|
 !i113 1
 R11
 R12
 Affd_tb_arq
 R1
 R2
-DEx4 work 6 ffd_tb 0 22 =ZFJzN3H^<K_I4mOM3LS>1
+Z18 DEx4 work 6 ffd_tb 0 22 =ZFJzN3H^<K_I4mOM3LS>1
 l25
 L9
-VboeV:VM2IX@0g^a?m61iP2
-!s100 5J1>N@IV[LI1n8N_2SAi50
+Z19 VboeV:VM2IX@0g^a?m61iP2
+Z20 !s100 5J1>N@IV[LI1n8N_2SAi50
 R6
 32
-R16
+R7
 !i10b 1
+R8
+R16
 R17
-R18
-R19
 !i113 1
 R11
 R12
