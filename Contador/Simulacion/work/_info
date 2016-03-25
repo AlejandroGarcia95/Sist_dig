@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Documentos/FIUBA/SistemasDigitales/Prueba/Simulacion
+Econtador
+Z0 w1458874435
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/Contador/Simulacion
+Z5 8D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/Contador/contador.vhd
+Z6 FD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/Contador/contador.vhd
+l0
+L6
+VQNnZGUok>oZ[7:zC3kVB41
+!s100 VTaD7l]5HOiHmUOjCZn<61
+Z7 OP;C;10.4a;61
+32
+Z8 !s110 1458874665
+!i10b 1
+Z9 !s108 1458874665.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/Contador/contador.vhd|
+Z11 !s107 D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/Contador/contador.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+Acontador_arq
+R1
+R2
+R3
+DEx4 work 8 contador 0 22 QNnZGUok>oZ[7:zC3kVB41
+l18
+L17
+Vg6@a>XObKOR1HDVnb5=ZA1
+!s100 >9Zz9QV:=63d>:H?A=A7e3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Etb
+Z14 w1458874658
+R2
+R3
+R4
+Z15 8D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/Contador/contador_tb.vhd
+Z16 FD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/Contador/contador_tb.vhd
+l0
+L4
+V]T:klBmCNOOfC2i1mU5X@1
+!s100 k?nZ7<l:hJfc]OFLW>?2G2
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/Contador/contador_tb.vhd|
+Z18 !s107 D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/Contador/contador_tb.vhd|
+!i113 1
+R12
+R13
+Abeh
+R2
+R3
+Z19 DEx4 work 2 tb 0 22 ]T:klBmCNOOfC2i1mU5X@1
+l21
+L7
+VV]iQQ]BQHC0Z>`G`T]8oC2
+!s100 @_8HDza7oAaF?>4IGIBI]1
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
