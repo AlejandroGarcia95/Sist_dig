@@ -9,10 +9,11 @@ entity cont_4dgt_disp is
 		rst : in std_logic;
 		ena : in std_logic;
 		
-		-- 7 bits para indicar los 7 segmentos del dígito
+
 		-- 4 bits para seleccionar un dígito del display
 		dgt_selector : out std_logic_vector(3 downto 0);
-		dgt_display : out std_logic_vector(6 downto 0);
+		-- 8 bits para indicar los 7 segmentos del dígito y el punto
+		dgt_display : out std_logic_vector(7 downto 0);
 		c_out : out std_logic
 	);
 end cont_4dgt_disp;
@@ -40,7 +41,7 @@ begin
 		);
 		
 	my1secGen : freq_div
-		generic map (N => 200)	-- Numero de clocks que hacen 1 seg
+		generic map (N => 50)	-- Numero de clocks que hacen 1 seg: 50000000
 		port map (
 			clk => clk,
 			rst => rst,
@@ -49,10 +50,10 @@ begin
 		);
 	
 	myMuxGen : freq_div
-		generic map (N => 10)	-- Numero de clocks que determina la frecuencia de refresco del display
+		generic map (N => 2)	-- Numero de clocks que determina la frecuencia de refresco del display: 250000
 		port map (
 			clk => clk,
-			rst => rst,
+			rst => '0',
 			ena => '1',
 			clk_out => ena_mux
 		);
@@ -67,7 +68,7 @@ begin
 		generic map (N => 2)
 		port map (
 			clk => clk,
-			rst => rst,
+			rst => '0',
 			ena => ena_mux,
 			count_out => mux_out
 		);
@@ -80,10 +81,10 @@ begin
 						"1111" when others;
 						
 	with mux_out select
-	dgt_selector <= "0001" when "00",
-					"0010" when "01",
-					"0100" when "10",
-					"1000" when "11",
-					"0001" when others;
+	dgt_selector <= "1110" when "00",
+					"1101" when "01",
+					"1011" when "10",
+					"0111" when "11",
+					"1111" when others;
 	
 end cont_4dgt_disp_arq;

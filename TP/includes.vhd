@@ -27,7 +27,7 @@ package includes is
 	component deco_7s is
 		port(
 			num: in std_logic_vector(3 downto 0);		-- Numero BCD a convertir
-			display: out std_logic_vector(6 downto 0) -- 7 patas del display en orden abcdefg
+			display: out std_logic_vector(7 downto 0) -- 8 patas del display en orden Pabcdefg
 		);
 	end component deco_7s;
 	

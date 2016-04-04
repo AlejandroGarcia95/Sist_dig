@@ -1,0 +1,68 @@
+C:/YO/Facu/Sist_dig/TP/includes.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/TP/includes.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package includes
+
+} {} {}} C:/YO/Facu/Sist_dig/TP/cont_tp1.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/TP/cont_tp1.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package includes
+-- Compiling entity cont_4dgt_disp
+-- Compiling architecture cont_4dgt_disp_arq of cont_4dgt_disp
+
+} {} {}} C:/YO/Facu/Sist_dig/TP/deco_7s.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/TP/deco_7s.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity deco_7s
+-- Compiling architecture deco_7s_arq of deco_7s
+
+} {} {}} C:/YO/Facu/Sist_dig/TP/freq_div.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/TP/freq_div.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity freq_div
+-- Compiling architecture freq_div_arq of freq_div
+
+} {} {}} C:/YO/Facu/Sist_dig/TP/contBCD_1dgt.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/TP/contBCD_1dgt.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity contBCD_1dgt
+-- Compiling architecture contBCD_1dgt_arq of contBCD_1dgt
+
+} {} {}} C:/YO/Facu/Sist_dig/TP/contBCD.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/TP/contBCD.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity contBCD
+-- Compiling architecture contBCD_arq of contBCD
+
+} {} {}} C:/YO/Facu/Sist_dig/TP/tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/TP/tb.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb
+-- Compiling architecture beh of tb
+
+} {} {}} C:/YO/Facu/Sist_dig/TP/contador.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/TP/contador.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity contador
+-- Compiling architecture contador_arq of contador
+
+} {} {}}

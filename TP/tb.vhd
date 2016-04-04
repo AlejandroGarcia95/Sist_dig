@@ -13,14 +13,14 @@ architecture beh of tb is
 			ena : in std_logic;
 			
 			dgt_selector : out std_logic_vector(3 downto 0);
-			dgt_display : out std_logic_vector(6 downto 0);
+			dgt_display : out std_logic_vector(7 downto 0);
 			c_out : out std_logic
 		);
 	end component cont_4dgt_disp;
 	
 	signal clk_t, rst_t, ena_t : std_logic := '0';
 	signal sel_t : std_logic_vector(3 downto 0) := "0000";
-	signal dgt_t : std_logic_vector(6 downto 0) := "0000000";
+	signal dgt_t : std_logic_vector(7 downto 0) := "00000000";
 
 begin
 	myDisplay : cont_4dgt_disp
@@ -34,6 +34,6 @@ begin
 		);
 		
 	clk_t <= not clk_t after 5 ns;
-	rst_t <= '1' after 1 ns, '0' after 20 ns;
-	ena_t <= '1' after 100 ns, '0' after 25000 ns;
+	rst_t <= '1' after 1 ns, '0' after 10000 ns;
+	ena_t <= '1' after 100 ns;
 end beh;

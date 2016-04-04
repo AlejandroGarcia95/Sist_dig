@@ -7,26 +7,26 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/Contador/Simulacion
+dC:/Modeltech_pe_edu_10.4a/examples
 Econt_4dgt_disp
-Z0 w1458879630
-Z1 DPx4 work 8 includes 0 22 1i?Y8^LT=EM88aXl63id=1
+Z0 w1459729419
+Z1 DPx4 work 8 includes 0 22 CE_ozWGX4?n2m^zc5^YJk3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z4 dD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/Simulation
-Z5 8D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/cont_4dgt_con_display.vhd
-Z6 FD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/cont_4dgt_con_display.vhd
+Z4 dC:/YO/Facu/Sist_dig/TP/Simulation
+Z5 8C:/YO/Facu/Sist_dig/TP/cont_tp1.vhd
+Z6 FC:/YO/Facu/Sist_dig/TP/cont_tp1.vhd
 l0
 L5
-VK6IE0F5I_?Wz;<9OKhhDm3
-!s100 _5E7WK>YOcMUP@[g^2MR;1
+VT<jNk@YRVEeF@Ri`Nld?<2
+!s100 aWhG4XR74M5Q:fzakUmiC3
 Z7 OP;C;10.4a;61
 32
-Z8 !s110 1458879636
+Z8 !s110 1459729740
 !i10b 1
-Z9 !s108 1458879636.000000
-Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/cont_4dgt_con_display.vhd|
-Z11 !s107 D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/cont_4dgt_con_display.vhd|
+Z9 !s108 1459729740.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/TP/cont_tp1.vhd|
+Z11 !s107 C:/YO/Facu/Sist_dig/TP/cont_tp1.vhd|
 !i113 1
 Z12 o-work work -2002 -explicit -O0
 Z13 tExplicit 1
@@ -34,11 +34,11 @@ Acont_4dgt_disp_arq
 R1
 R2
 R3
-DEx4 work 14 cont_4dgt_disp 0 22 K6IE0F5I_?Wz;<9OKhhDm3
-l31
-L20
-VMJe?a[]klRkJ1G<L1eEZ22
-!s100 :X<^n2BjSzWgi9Hl0hjo72
+DEx4 work 14 cont_4dgt_disp 0 22 T<jNk@YRVEeF@Ri`Nld?<2
+l32
+L21
+VeS]Bd_M4X50k11]F@2n0b3
+!s100 59@6oJ>maPKznJ0dYj:020
 R7
 32
 R8
@@ -50,24 +50,24 @@ R11
 R12
 R13
 Econtador
-Z14 w1458875985
+Z14 w1459112218
 Z15 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 R2
 R3
 R4
-Z16 8D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contador.vhd
-Z17 FD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contador.vhd
+Z16 8C:/YO/Facu/Sist_dig/TP/contador.vhd
+Z17 FC:/YO/Facu/Sist_dig/TP/contador.vhd
 l0
 L6
 VQNnZGUok>oZ[7:zC3kVB41
 !s100 VTaD7l]5HOiHmUOjCZn<61
 R7
 32
-R8
+Z18 !s110 1459729741
 !i10b 1
-R9
-Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contador.vhd|
-Z19 !s107 D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contador.vhd|
+Z19 !s108 1459729741.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/TP/contador.vhd|
+Z21 !s107 C:/YO/Facu/Sist_dig/TP/contador.vhd|
 !i113 1
 R12
 R13
@@ -82,33 +82,33 @@ Vg6@a>XObKOR1HDVnb5=ZA1
 !s100 >9Zz9QV:=63d>:H?A=A7e3
 R7
 32
-R8
-!i10b 1
-R9
 R18
+!i10b 1
 R19
+R20
+R21
 !i113 1
 R12
 R13
 Econtbcd
-Z20 w1458870720
+R14
 R15
 R2
 R3
 R4
-Z21 8D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contBCD.vhd
-Z22 FD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contBCD.vhd
+Z22 8C:/YO/Facu/Sist_dig/TP/contBCD.vhd
+Z23 FC:/YO/Facu/Sist_dig/TP/contBCD.vhd
 l0
 L5
 V1C7zoRVGShN7em7hDLSTa3
 !s100 aU:M<]UCONR_W9RJQ_ZWV1
 R7
 32
-Z23 !s110 1458879637
+R18
 !i10b 1
-Z24 !s108 1458879637.000000
-Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contBCD.vhd|
-Z26 !s107 D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contBCD.vhd|
+R19
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/TP/contBCD.vhd|
+Z25 !s107 C:/YO/Facu/Sist_dig/TP/contBCD.vhd|
 !i113 1
 R12
 R13
@@ -123,33 +123,33 @@ VXIS?kSPaQ]CoaQO38A_9f2
 !s100 N]BdQaC^EGACTEGU35_[R0
 R7
 32
-R23
+R18
 !i10b 1
+R19
 R24
 R25
-R26
 !i113 1
 R12
 R13
 Econtbcd_1dgt
-R20
+R14
 R15
 R2
 R3
 R4
-Z27 8D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contBCD_1dgt.vhd
-Z28 FD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contBCD_1dgt.vhd
+Z26 8C:/YO/Facu/Sist_dig/TP/contBCD_1dgt.vhd
+Z27 FC:/YO/Facu/Sist_dig/TP/contBCD_1dgt.vhd
 l0
 L5
 VZ3hm0K5gmiXSafK?WUooB2
 !s100 iEmg^@>Ll`^1TRVC`;a4`0
 R7
 32
-R23
+R18
 !i10b 1
-R24
-Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contBCD_1dgt.vhd|
-Z30 !s107 D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/contBCD_1dgt.vhd|
+R19
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/TP/contBCD_1dgt.vhd|
+Z29 !s107 C:/YO/Facu/Sist_dig/TP/contBCD_1dgt.vhd|
 !i113 1
 R12
 R13
@@ -164,71 +164,71 @@ V`G6H@L2000jU2[Qc9WQ0K0
 !s100 @94RWH7goh66@f8l95ZM02
 R7
 32
-R23
+R18
 !i10b 1
-R24
+R19
+R28
 R29
-R30
 !i113 1
 R12
 R13
 Edeco_7s
-R20
+Z30 w1459729319
 R2
 R3
 R4
-Z31 8D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/deco_7s.vhd
-Z32 FD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/deco_7s.vhd
+Z31 8C:/YO/Facu/Sist_dig/TP/deco_7s.vhd
+Z32 FC:/YO/Facu/Sist_dig/TP/deco_7s.vhd
 l0
 L4
-V1@2B1SN;cK<P=EcF8j<[L2
-!s100 :obG@K]^;E8XSDmj`fdbZ1
+VeQI_@hoeCknl_ZS2QX2CO3
+!s100 1O^2d6:IoOn38B^C1Lin63
 R7
 32
-R23
+R18
 !i10b 1
-R24
-Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/deco_7s.vhd|
-Z34 !s107 D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/deco_7s.vhd|
+R19
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/TP/deco_7s.vhd|
+Z34 !s107 C:/YO/Facu/Sist_dig/TP/deco_7s.vhd|
 !i113 1
 R12
 R13
 Adeco_7s_arq
 R2
 R3
-DEx4 work 7 deco_7s 0 22 1@2B1SN;cK<P=EcF8j<[L2
+DEx4 work 7 deco_7s 0 22 eQI_@hoeCknl_ZS2QX2CO3
 l12
 L11
-Vn]Vj^ZL16SJPfEe6^hmU11
-!s100 Qc1>L^]8PdGU;PKo:BO[E2
+Vi:m<Y63T4HYWS;i8eHOa63
+!s100 K872@1G>OF;8STgzV^o4e2
 R7
 32
-R23
+R18
 !i10b 1
-R24
+R19
 R33
 R34
 !i113 1
 R12
 R13
 Efreq_div
-Z35 w1458879588
+R14
 R2
 R3
 R4
-Z36 8D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/freq_div.vhd
-Z37 FD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/freq_div.vhd
+Z35 8C:/YO/Facu/Sist_dig/TP/freq_div.vhd
+Z36 FC:/YO/Facu/Sist_dig/TP/freq_div.vhd
 l0
 L4
 VID?UhSEIFNZQlSeDfQ7Xi3
 !s100 ;::J_MY@0=D>RP<XSgh003
 R7
 32
-R23
+R18
 !i10b 1
-R24
-Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/freq_div.vhd|
-Z39 !s107 D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/freq_div.vhd|
+R19
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/TP/freq_div.vhd|
+Z38 !s107 C:/YO/Facu/Sist_dig/TP/freq_div.vhd|
 !i113 1
 R12
 R13
@@ -242,71 +242,71 @@ V=U6PlaX=i]j`JjBCgk]d<1
 !s100 CDDbGPE]L8bK[GY_7i<I53
 R7
 32
-R23
+R18
 !i10b 1
-R24
+R19
+R37
 R38
-R39
 !i113 1
 R12
 R13
 Pincludes
 R2
 R3
-w1458879562
+w1459729387
 R4
-8D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/includes.vhd
-FD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/includes.vhd
+8C:/YO/Facu/Sist_dig/TP/includes.vhd
+FC:/YO/Facu/Sist_dig/TP/includes.vhd
 l0
 L4
-V1i?Y8^LT=EM88aXl63id=1
-!s100 2E_<>5gTYZSN8EMgG:C@l3
+VCE_ozWGX4?n2m^zc5^YJk3
+!s100 =[FoG]5o2YOCUR;R>j@ID2
 R7
 32
-R8
+R18
 !i10b 1
-R9
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/includes.vhd|
-!s107 D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/includes.vhd|
+R19
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/TP/includes.vhd|
+!s107 C:/YO/Facu/Sist_dig/TP/includes.vhd|
 !i113 1
 R12
 R13
 Etb
-Z40 w1458879380
+Z39 w1459729728
 R2
 R3
 R4
-Z41 8D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/tb.vhd
-Z42 FD:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/tb.vhd
+Z40 8C:/YO/Facu/Sist_dig/TP/tb.vhd
+Z41 FC:/YO/Facu/Sist_dig/TP/tb.vhd
 l0
 L4
 V]T:klBmCNOOfC2i1mU5X@1
 !s100 k?nZ7<l:hJfc]OFLW>?2G2
 R7
 32
-R23
+R18
 !i10b 1
-R24
-Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/tb.vhd|
-Z44 !s107 D:/Documentos/FIUBA/SistemasDigitales/Sist_dig/TP/tb.vhd|
+R19
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/TP/tb.vhd|
+Z43 !s107 C:/YO/Facu/Sist_dig/TP/tb.vhd|
 !i113 1
 R12
 R13
 Abeh
 R2
 R3
-Z45 DEx4 work 2 tb 0 22 ]T:klBmCNOOfC2i1mU5X@1
+Z44 DEx4 work 2 tb 0 22 ]T:klBmCNOOfC2i1mU5X@1
 l25
 L7
-Z46 VF>:2iGjTHFA;bTIg3hlQd3
-Z47 !s100 ^[HQA6PKF``KdY<6`::=F3
+V]6V]_I5j27a]RBgmD_=@i2
+!s100 C[X;eVkU`ANjj^NYY>?8i2
 R7
 32
-R23
+R18
 !i10b 1
-R24
+R19
+R42
 R43
-R44
 !i113 1
 R12
 R13
