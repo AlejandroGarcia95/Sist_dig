@@ -1,0 +1,45 @@
+{C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Multiplicador.vhd} {0 {vcom -work work -2002 -explicit -vopt {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Multiplicador.vhd}
+QuestaSim vcom 6.6b Compiler 2010.05 May 21 2010
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Compiling entity multiplicador
+-- Compiling architecture multiplicador_arq of multiplicador
+** Error: C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Multiplicador.vhd(57): Actual (infix expression) for formal "data_in" is not a globally static expression.
+** Error: C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Multiplicador.vhd(58): (vcom-1162) Formal "data_out" of mode OUT cannot be associated with an expression.
+** Error: C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Multiplicador.vhd(80): Labels do not match: 'multiplicador_arq' and 'multiplicador'.
+** Error: C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Multiplicador.vhd(80): VHDL Compiler exiting
+
+} {7.0 11.0} {}} {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/SumadorRestador.vhd} {1 {vcom -work work -2002 -explicit -vopt {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/SumadorRestador.vhd}
+QuestaSim vcom 6.6b Compiler 2010.05 May 21 2010
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package numeric_std
+-- Compiling entity sum_rest
+-- Compiling architecture sum_rest_arq of sum_rest
+
+} {} {}} {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Registro.vhd} {1 {vcom -work work -2002 -explicit -vopt {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Registro.vhd}
+QuestaSim vcom 6.6b Compiler 2010.05 May 21 2010
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package numeric_std
+-- Compiling entity registro
+-- Compiling architecture registro_arq of registro
+
+} {} {}} {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/mul_tb.vhd} {0 {vcom -work work -2002 -explicit -vopt {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/mul_tb.vhd}
+QuestaSim vcom 6.6b Compiler 2010.05 May 21 2010
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Compiling entity mult_tb
+-- Compiling architecture mult_tb_arq of mult_tb
+** Error: C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/mul_tb.vhd(28): (vcom-1272) Length of expected is 5; length of actual is 4.
+** Error: C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/mul_tb.vhd(29): (vcom-1272) Length of expected is 5; length of actual is 4.
+** Error: C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/mul_tb.vhd(33): VHDL Compiler exiting
+
+} {7.0 10.0} {}} {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/FFD.vhd} {1 {vcom -work work -2002 -explicit -vopt {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/FFD.vhd}
+QuestaSim vcom 6.6b Compiler 2010.05 May 21 2010
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Compiling entity ffd
+-- Compiling architecture ffd_arq of ffd
+
+} {} {}}

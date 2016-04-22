@@ -1,0 +1,10 @@
+	BACKLOG GENERAL
+
+	- Terminar multiplicador 
+		- Y modificarlo para que sirva con signed y unsigned
+
+	- Hacer módulo de control de VGA
+	- Hacer módulo contador de unos del conversor
+	- Hacer módulo de sigma-delta
+
+	- Hacer carpeta de componentes con package includes

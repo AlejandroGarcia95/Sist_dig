@@ -4,7 +4,8 @@ use IEEE.numeric_std.all;
 
 -- un contador genérico de n bits
 entity contador is
-	generic( N : natural := 2 );
+	generic( N : natural := 2;
+			 TOPE : natural := 3);
 	port (
 		clk: in std_logic;		-- clock
 		rst: in std_logic;		-- reset, coloca el contador en 0
@@ -23,7 +24,7 @@ begin
 			count := (others => '0');
 		elsif rising_edge(clk) then
 			if ena = '1' then
-				if (to_integer(unsigned(count)) = 2**(N)) then		
+				if (to_integer(unsigned(count)) = 2**(N) or to_integer(unsigned(count)) = TOPE) then		
 					count := (others => '0');
 				else
 					count := std_logic_vector(unsigned(count) + 1);

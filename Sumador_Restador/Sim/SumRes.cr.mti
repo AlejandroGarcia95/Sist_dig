@@ -1,0 +1,16 @@
+{C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Sumador_Restador/sr_tb.vhd} {1 {vcom -work work -2002 -explicit -vopt {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Sumador_Restador/sr_tb.vhd}
+QuestaSim vcom 6.6b Compiler 2010.05 May 21 2010
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Compiling entity sum_rest_tb
+-- Compiling architecture sum_rest_tb_arq of sum_rest_tb
+
+} {} {}} {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Sumador_Restador/SumadorRestador.vhd} {1 {vcom -work work -2002 -explicit -vopt {C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Sumador_Restador/SumadorRestador.vhd}
+QuestaSim vcom 6.6b Compiler 2010.05 May 21 2010
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package numeric_std
+-- Compiling entity sum_rest
+-- Compiling architecture sum_rest_arq of sum_rest
+
+} {} {}}

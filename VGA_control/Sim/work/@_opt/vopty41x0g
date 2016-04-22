@@ -1,0 +1,102 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\questasim_6.6b\examples
+T_opt
+Z1 VWG=g=gVH>5?:5_JYa[IJF2
+Z2 04 2 6 work tb tb_beh 1
+Z3 =7-002522f2bc6c-57193380-3c8-fec
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 n@_opt
+Z6 OE;O;6.6b;45
+Z7 dC:\questasim_6.6b\examples
+Econtador
+Z8 w1461265554
+Z9 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z10 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z11 dC:\Sist_dig-master\VGA_control\sim
+Z12 8C:/Sist_dig-master/VGA_control/contador.vhd
+Z13 FC:/Sist_dig-master/VGA_control/contador.vhd
+l0
+L6
+Z14 VZYEFET`H>WRQiDCK8BQS11
+Z15 OE;C;6.6b;45
+32
+Z16 o-work work -2002 -explicit
+Z17 tExplicit 1
+Z18 !s100 @nWkCS6CNoXKfbAY?1CJ@3
+Acontador_arq
+Z19 DPx22 C:\questasim_6.6b\ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z20 DPx22 C:\questasim_6.6b\ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z21 DEx39 C:\Sist_dig-master\VGA_control\sim\work 8 contador 0 22 ZYEFET`H>WRQiDCK8BQS11
+32
+Z22 Mx2 22 C:\questasim_6.6b\ieee 14 std_logic_1164
+Z23 Mx1 22 C:\questasim_6.6b\ieee 11 numeric_std
+l19
+L18
+Z24 V^ig?8H^[13LzZdJN0SJB12
+R15
+R16
+R17
+Z25 !s100 8C5?_jjZ5f_Y=9Mz5J5D70
+Etb
+Z26 w1461269335
+R19
+R20
+32
+R11
+Z27 8C:/Sist_dig-master/VGA_control/VGA_logic_tb.vhd
+Z28 FC:/Sist_dig-master/VGA_control/VGA_logic_tb.vhd
+l0
+L5
+Z29 V>HKf=B?b4Cm?3VSGV9;cG1
+R15
+R16
+R17
+Z30 !s100 7KF8eWDmXE]Zi`WAjiY[:2
+Atb_beh
+Z31 DEx39 C:\Sist_dig-master\VGA_control\sim\work 9 vga_logic 0 22 A4=66;elhFcUKRGO>OKIW3
+R21
+R19
+R20
+Z32 DEx39 C:\Sist_dig-master\VGA_control\sim\work 2 tb 0 22 >HKf=B?b4Cm?3VSGV9;cG1
+32
+R22
+R23
+l36
+L8
+Z33 VdBkOEa^5QOP0oINOP8GSA2
+R15
+R16
+R17
+Z34 !s100 NI`C^_IAP]JOXTaHG`BgK3
+Evga_logic
+Z35 w1461267083
+R9
+R10
+R11
+Z36 8C:\Sist_dig-master\VGA_control\VGA_logic.vhd
+Z37 FC:\Sist_dig-master\VGA_control\VGA_logic.vhd
+l0
+L5
+Z38 VA4=66;elhFcUKRGO>OKIW3
+R15
+32
+R16
+R17
+Z39 !s100 cChMagAQdhhJESZYa?Zd93
+Avga_logic_arq
+R19
+R20
+R31
+32
+R22
+R23
+l33
+L14
+Z40 VRjfk]NSU0RK[2>22?fa7U0
+R15
+R16
+R17
+Z41 !s100 <D>@Sz[N5Y6HDJ=U:CChC1

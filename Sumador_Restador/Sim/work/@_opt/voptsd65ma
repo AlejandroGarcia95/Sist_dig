@@ -1,0 +1,69 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Documents and Settings\alumno\Escritorio\tps-Gaston
+T_opt
+Z1 V]4hNg=d9Y6;iQ<4dQGAR^1
+Z2 04 11 15 work sum_rest_tb sum_rest_tb_arq 1
+Z3 =9-002522f2dec5-570feb86-3e-fcc
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 n@_opt
+Z6 OE;O;6.6b;45
+Z7 dC:\Documents and Settings\alumno\Escritorio\tps-Gaston
+Esum_rest
+Z8 w1460660769
+Z9 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z10 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z11 dC:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Sumador_Restador\Sim
+Z12 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Sumador_Restador/SumadorRestador.vhd
+Z13 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Sumador_Restador/SumadorRestador.vhd
+l0
+L5
+Z14 Vm>eCPYY?b405RF^EGZlnM3
+Z15 OE;C;6.6b;45
+32
+Z16 o-work work -2002 -explicit
+Z17 tExplicit 1
+Z18 !s100 L>E]zd`gIV5bJ4Kn:m9dR2
+Asum_rest_arq
+Z19 DPx22 C:\questasim_6.6b\ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z20 DPx22 C:\questasim_6.6b\ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z21 DEx89 C:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Sumador_Restador\Sim\work 8 sum_rest 0 22 m>eCPYY?b405RF^EGZlnM3
+32
+Z22 Mx2 22 C:\questasim_6.6b\ieee 14 std_logic_1164
+Z23 Mx1 22 C:\questasim_6.6b\ieee 11 numeric_std
+l19
+L17
+Z24 VK<Z5<Q:f`LW3f=7J=Jzfn0
+R15
+R16
+R17
+Z25 !s100 5Y]?z;aBD`8;BL`Ga9>8h3
+Esum_rest_tb
+Z26 w1460661110
+R20
+32
+R11
+Z27 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Sumador_Restador/sr_tb.vhd
+Z28 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Sumador_Restador/sr_tb.vhd
+l0
+L4
+Z29 VkKhjKDcjQ:eO`_2a6XEm=3
+R15
+R16
+R17
+Z30 !s100 >^[URP@mDM8=@ZYD_lVO:3
+Asum_rest_tb_arq
+R21
+R20
+Z31 DEx89 C:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Sumador_Restador\Sim\work 11 sum_rest_tb 0 22 kKhjKDcjQ:eO`_2a6XEm=3
+32
+Z32 Mx1 22 C:\questasim_6.6b\ieee 14 std_logic_1164
+l23
+L7
+Z33 VDiPfMXab?F4?R1[nMT>:02
+R15
+R16
+R17
+Z34 !s100 [5j8e8NJ44mUN`[fJ@7WO2

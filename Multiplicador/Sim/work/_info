@@ -1,0 +1,117 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Registro\Sim
+Effd
+Z0 w1459718378
+Z1 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z2 dC:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Multiplicador\Sim
+Z3 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/FFD.vhd
+Z4 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/FFD.vhd
+l0
+L4
+VJ5^U<>lbF32;eDZ4M3VKD3
+Z5 OE;C;6.6b;45
+32
+Z6 o-work work -2002 -explicit
+Z7 tExplicit 1
+!s100 al]c9Ne0]]bFe07`AX8OR3
+Affd_arq
+R1
+DEx4 work 3 ffd 0 22 J5^U<>lbF32;eDZ4M3VKD3
+l15
+L14
+V<TE@6iASWcA5o1ljfc9G80
+R5
+32
+Z8 Mx1 4 ieee 14 std_logic_1164
+R6
+R7
+!s100 WLTDK9JFde<UdTWaN1IXz3
+Emult_tb
+w1460664245
+R1
+R2
+8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/mul_tb.vhd
+FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/mul_tb.vhd
+l0
+L4
+V3Y5jb<4cY[DjJGmTWL39K3
+R5
+32
+R6
+R7
+!s100 `1OWX@[V?;FimZEV?z?F81
+Emultiplicador
+w1460664548
+R1
+R2
+8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Multiplicador.vhd
+FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Multiplicador.vhd
+l0
+L4
+VP@of2159][a[j7<zGNPh10
+R5
+32
+R6
+R7
+!s100 [KmhJQAS5TC4gz[YcOZN91
+Eregistro
+Z9 w1460662517
+Z10 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+R1
+R2
+Z11 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Registro.vhd
+Z12 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Registro.vhd
+l0
+L5
+VV_a3OzZkgV;0g6D@MHBO[1
+R5
+32
+R6
+R7
+!s100 PiWmmZXmbA`V6;l[NS9JI2
+Aregistro_arq
+R10
+R1
+DEx4 work 8 registro 0 22 V_a3OzZkgV;0g6D@MHBO[1
+l27
+L16
+V3zdQU2XldgJE_2L`YTe643
+!s100 RU;@N_1d?K5z;[Q1mKm352
+R5
+32
+Z13 Mx2 4 ieee 14 std_logic_1164
+Z14 Mx1 4 ieee 11 numeric_std
+R6
+R7
+Esum_rest
+Z15 w1460660769
+R10
+R1
+R2
+Z16 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/SumadorRestador.vhd
+Z17 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/SumadorRestador.vhd
+l0
+L5
+Vm>eCPYY?b405RF^EGZlnM3
+!s100 L>E]zd`gIV5bJ4Kn:m9dR2
+R5
+32
+R6
+R7
+Asum_rest_arq
+R10
+R1
+Z18 DEx4 work 8 sum_rest 0 22 m>eCPYY?b405RF^EGZlnM3
+l19
+L17
+Z19 VK<Z5<Q:f`LW3f=7J=Jzfn0
+Z20 !s100 5Y]?z;aBD`8;BL`Ga9>8h3
+R5
+32
+R13
+R14
+R6
+R7

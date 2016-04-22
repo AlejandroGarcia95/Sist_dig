@@ -1,0 +1,96 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Sumador_Restador\Sim
+T_opt
+Z1 VlJ^TdNPKY2aJ6@]R6Y4]81
+Z2 04 2 6 work tb tb_arq 1
+Z3 =4-002522f2dec5-570ff1f7-2fd-414
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 n@_opt
+Z6 OE;O;6.6b;45
+Z7 dC:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Sumador_Restador\Sim
+Effd
+Z8 w1459718378
+Z9 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z10 dC:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Registro\Sim
+Z11 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Registro/FFD.vhd
+Z12 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Registro/FFD.vhd
+l0
+L4
+Z13 VJ5^U<>lbF32;eDZ4M3VKD3
+Z14 OE;C;6.6b;45
+32
+Z15 o-work work -2002 -explicit
+Z16 tExplicit 1
+Z17 !s100 al]c9Ne0]]bFe07`AX8OR3
+Affd_arq
+Z18 DPx22 C:\questasim_6.6b\ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z19 DEx81 C:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Registro\Sim\work 3 ffd 0 22 J5^U<>lbF32;eDZ4M3VKD3
+32
+Z20 Mx1 22 C:\questasim_6.6b\ieee 14 std_logic_1164
+l15
+L14
+Z21 V<TE@6iASWcA5o1ljfc9G80
+R14
+R15
+R16
+Z22 !s100 WLTDK9JFde<UdTWaN1IXz3
+Eregistro
+Z23 w1460662517
+Z24 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+R9
+R10
+Z25 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Registro/Registro.vhd
+Z26 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Registro/Registro.vhd
+l0
+L5
+Z27 VV_a3OzZkgV;0g6D@MHBO[1
+R14
+32
+R15
+R16
+Z28 !s100 PiWmmZXmbA`V6;l[NS9JI2
+Aregistro_arq
+R19
+Z29 DPx22 C:\questasim_6.6b\ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+R18
+Z30 DEx81 C:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Registro\Sim\work 8 registro 0 22 V_a3OzZkgV;0g6D@MHBO[1
+32
+Z31 Mx2 22 C:\questasim_6.6b\ieee 14 std_logic_1164
+Z32 Mx1 22 C:\questasim_6.6b\ieee 11 numeric_std
+l27
+L16
+Z33 V3zdQU2XldgJE_2L`YTe643
+R14
+R15
+R16
+Z34 !s100 RU;@N_1d?K5z;[Q1mKm352
+Etb
+Z35 w1460662767
+R18
+32
+R10
+Z36 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Registro/Registro_tb.vhd
+Z37 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Registro/Registro_tb.vhd
+l0
+L4
+Z38 V=l=nhSG<5hIJ5?@^>9G;00
+R14
+R15
+R16
+Z39 !s100 hWVF:71l8Ao:beZIRM>k;2
+Atb_arq
+R30
+R18
+Z40 DEx81 C:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Registro\Sim\work 2 tb 0 22 =l=nhSG<5hIJ5?@^>9G;00
+32
+R20
+l22
+L7
+Z41 VgSCHIO3[@LQAi9@6PkJ9H0
+R14
+R15
+R16
+Z42 !s100 hKR_4cWNVj8[5GAK>NI>k1
