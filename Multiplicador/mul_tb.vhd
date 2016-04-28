@@ -16,18 +16,20 @@ architecture mult_tb_arq of mult_tb is
 	   );
 	end component multiplicador;
 
-	signal a_t, b_t: std_logic_vector(4 downto 0);
-	signal s_t: std_logic_vector(7 downto 0);
+	signal a_t, b_t: std_logic_vector(7 downto 0);
+	signal s_t: std_logic_vector(15 downto 0);
 	signal clk_t, load_t: std_logic := '0';
 	
 begin
 	myMul: multiplicador
-		generic map(N => 4)
+		generic map(N => 8)
 		port map (a_t, b_t, s_t, clk_t, load_t);
 
-	a_t <= "0000";
-	b_t <= "0000";
+	a_t <= "11001110";
+	b_t <= "10000100", s_t(7 downto 0) after 125 ns;
 	
-	clk_t <= not clk_t after 50 ns;  
+	load_t <= '1' after 10 ns, '0' after 40 ns;
+	
+	clk_t <= not clk_t after 5 ns;  
 	
 end mult_tb_arq;

@@ -1,117 +1,252 @@
 m255
-K3
+K4
+z2
 13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
 cModel Technology
-dC:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Registro\Sim
+dC:/YO/Facu/Sist_dig/TP/Simulation
+Econtador
+Z0 w1461265342
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/YO/Facu/Sist_dig/Multiplicador/Sim
+Z5 8C:/YO/Facu/Sist_dig/Multiplicador/contador.vhd
+Z6 FC:/YO/Facu/Sist_dig/Multiplicador/contador.vhd
+l0
+L6
+VQNnZGUok>oZ[7:zC3kVB41
+!s100 VTaD7l]5HOiHmUOjCZn<61
+Z7 OP;C;10.4a;61
+32
+Z8 !s110 1461877529
+!i10b 1
+Z9 !s108 1461877529.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/Multiplicador/contador.vhd|
+Z11 !s107 C:/YO/Facu/Sist_dig/Multiplicador/contador.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+Acontador_arq
+R1
+R2
+R3
+DEx4 work 8 contador 0 22 QNnZGUok>oZ[7:zC3kVB41
+l18
+L17
+V`JfEF[[VKHQVHzXB[H1aH3
+!s100 T0kHZ1m;5hAcokL?>>E<k1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
 Effd
-Z0 w1459718378
-Z1 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
-Z2 dC:\Documents and Settings\alumno\Mis documentos\Sist_dig-master\Multiplicador\Sim
-Z3 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/FFD.vhd
-Z4 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/FFD.vhd
+Z14 w1459718378
+R2
+R3
+R4
+Z15 8C:/YO/Facu/Sist_dig/Multiplicador/FFD.vhd
+Z16 FC:/YO/Facu/Sist_dig/Multiplicador/FFD.vhd
 l0
 L4
-VJ5^U<>lbF32;eDZ4M3VKD3
-Z5 OE;C;6.6b;45
+V_2RXWU18Qc:;9V_Nhi6?J0
+!s100 <ENKm4KMPj7k@1c1UmNUa0
+R7
 32
-Z6 o-work work -2002 -explicit
-Z7 tExplicit 1
-!s100 al]c9Ne0]]bFe07`AX8OR3
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/Multiplicador/FFD.vhd|
+Z18 !s107 C:/YO/Facu/Sist_dig/Multiplicador/FFD.vhd|
+!i113 1
+R12
+R13
 Affd_arq
-R1
-DEx4 work 3 ffd 0 22 J5^U<>lbF32;eDZ4M3VKD3
+R2
+R3
+DEx4 work 3 ffd 0 22 _2RXWU18Qc:;9V_Nhi6?J0
 l15
 L14
-V<TE@6iASWcA5o1ljfc9G80
-R5
-32
-Z8 Mx1 4 ieee 14 std_logic_1164
-R6
+VI:BL9Vn2c8ZKXY^]i`jOh1
+!s100 k:9Vh_2^i]>IfzTmk4M1l0
 R7
-!s100 WLTDK9JFde<UdTWaN1IXz3
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
 Emult_tb
-w1460664245
-R1
+Z19 w1461879343
 R2
-8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/mul_tb.vhd
-FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/mul_tb.vhd
+R3
+R4
+Z20 8C:/YO/Facu/Sist_dig/Multiplicador/mul_tb.vhd
+Z21 FC:/YO/Facu/Sist_dig/Multiplicador/mul_tb.vhd
 l0
 L4
-V3Y5jb<4cY[DjJGmTWL39K3
-R5
-32
-R6
+VhNcCfDIIa:l84:nQcV`@>2
+!s100 H=bMX@JKe6hWHio;C3dhb1
 R7
-!s100 `1OWX@[V?;FimZEV?z?F81
+32
+Z22 !s110 1461879570
+!i10b 1
+Z23 !s108 1461879570.000000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/Multiplicador/mul_tb.vhd|
+Z25 !s107 C:/YO/Facu/Sist_dig/Multiplicador/mul_tb.vhd|
+!i113 1
+R12
+R13
+Amult_tb_arq
+R2
+R3
+Z26 DEx4 work 7 mult_tb 0 22 hNcCfDIIa:l84:nQcV`@>2
+l23
+L7
+VI^Ho@l`<2<>ebVZ>9if]T3
+!s100 KTiNd[D5a7W84mHU^:@>k0
+R7
+32
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R12
+R13
 Emultiplicador
-w1460664548
+Z27 w1461878315
 R1
 R2
-8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Multiplicador.vhd
-FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Multiplicador.vhd
-l0
-L4
-VP@of2159][a[j7<zGNPh10
-R5
-32
-R6
-R7
-!s100 [KmhJQAS5TC4gz[YcOZN91
-Eregistro
-Z9 w1460662517
-Z10 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
-R1
-R2
-Z11 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Registro.vhd
-Z12 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/Registro.vhd
+R3
+R4
+Z28 8C:\YO\Facu\Sist_dig\Multiplicador\Multiplicador.vhd
+Z29 FC:\YO\Facu\Sist_dig\Multiplicador\Multiplicador.vhd
 l0
 L5
-VV_a3OzZkgV;0g6D@MHBO[1
-R5
-32
-R6
+VTnnj5lNd]e^mOTH<^1?B<0
+!s100 iLfP12A[:YAL8^j2b1=_Y0
 R7
-!s100 PiWmmZXmbA`V6;l[NS9JI2
-Aregistro_arq
-R10
+32
+Z30 !s110 1461878328
+!i10b 1
+Z31 !s108 1461878328.000000
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\YO\Facu\Sist_dig\Multiplicador\Multiplicador.vhd|
+Z33 !s107 C:\YO\Facu\Sist_dig\Multiplicador\Multiplicador.vhd|
+!i113 1
+R12
+R13
+Amultiplicador_arq
 R1
-DEx4 work 8 registro 0 22 V_a3OzZkgV;0g6D@MHBO[1
+R2
+R3
+DEx4 work 13 multiplicador 0 22 Tnnj5lNd]e^mOTH<^1?B<0
+l54
+L16
+V`fRONeNezabPcRS23kLQ42
+!s100 X=NIfT@YCdL:fd56`W]6d3
+R7
+32
+R30
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R12
+R13
+Eregistro
+Z34 w1460662518
+R1
+R2
+R3
+R4
+Z35 8C:/YO/Facu/Sist_dig/Multiplicador/Registro.vhd
+Z36 FC:/YO/Facu/Sist_dig/Multiplicador/Registro.vhd
+l0
+L5
+VJFPYgF>ok>40P`M:Ng:Pz1
+!s100 <S>7bcYT_:^4CWAjlNT>a2
+R7
+32
+R8
+!i10b 1
+R9
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/Multiplicador/Registro.vhd|
+Z38 !s107 C:/YO/Facu/Sist_dig/Multiplicador/Registro.vhd|
+!i113 1
+R12
+R13
+Aregistro_arq
+R1
+R2
+R3
+DEx4 work 8 registro 0 22 JFPYgF>ok>40P`M:Ng:Pz1
 l27
 L16
-V3zdQU2XldgJE_2L`YTe643
-!s100 RU;@N_1d?K5z;[Q1mKm352
-R5
-32
-Z13 Mx2 4 ieee 14 std_logic_1164
-Z14 Mx1 4 ieee 11 numeric_std
-R6
+V1heN>XF7]]0]2Zg57kiPT0
+!s100 1J`bG7EEklBk?Di7^zDiY2
 R7
+32
+R8
+!i10b 1
+R9
+R37
+R38
+!i113 1
+R12
+R13
 Esum_rest
-Z15 w1460660769
-R10
+Z39 w1460660770
 R1
 R2
-Z16 8C:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/SumadorRestador.vhd
-Z17 FC:/Documents and Settings/alumno/Mis documentos/Sist_dig-master/Multiplicador/SumadorRestador.vhd
+R3
+R4
+Z40 8C:/YO/Facu/Sist_dig/Multiplicador/SumadorRestador.vhd
+Z41 FC:/YO/Facu/Sist_dig/Multiplicador/SumadorRestador.vhd
 l0
 L5
-Vm>eCPYY?b405RF^EGZlnM3
-!s100 L>E]zd`gIV5bJ4Kn:m9dR2
-R5
-32
-R6
+VQ_NoiOiPBThL7WV[QP8dk3
+!s100 4mjco7:@;VO5mFXRo@=O_1
 R7
+32
+R8
+!i10b 1
+R9
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/YO/Facu/Sist_dig/Multiplicador/SumadorRestador.vhd|
+Z43 !s107 C:/YO/Facu/Sist_dig/Multiplicador/SumadorRestador.vhd|
+!i113 1
+R12
+R13
 Asum_rest_arq
-R10
 R1
-Z18 DEx4 work 8 sum_rest 0 22 m>eCPYY?b405RF^EGZlnM3
+R2
+R3
+DEx4 work 8 sum_rest 0 22 Q_NoiOiPBThL7WV[QP8dk3
 l19
 L17
-Z19 VK<Z5<Q:f`LW3f=7J=Jzfn0
-Z20 !s100 5Y]?z;aBD`8;BL`Ga9>8h3
-R5
-32
-R13
-R14
-R6
+Vz;h`Lj896bYddP@9UE]_o1
+!s100 l9ob?12NTz[TfOi<B=JnH1
 R7
+32
+R8
+!i10b 1
+R9
+R42
+R43
+!i113 1
+R12
+R13

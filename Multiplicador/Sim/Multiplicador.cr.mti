@@ -1,0 +1,53 @@
+C:/YO/Facu/Sist_dig/Multiplicador/contador.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/Multiplicador/contador.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity contador
+-- Compiling architecture contador_arq of contador
+
+} {} {}} C:/YO/Facu/Sist_dig/Multiplicador/mul_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/Multiplicador/mul_tb.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mult_tb
+-- Compiling architecture mult_tb_arq of mult_tb
+
+} {} {}} C:/YO/Facu/Sist_dig/Multiplicador/Registro.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/Multiplicador/Registro.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity registro
+-- Compiling architecture registro_arq of registro
+
+} {} {}} C:/YO/Facu/Sist_dig/Multiplicador/SumadorRestador.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/Multiplicador/SumadorRestador.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity sum_rest
+-- Compiling architecture sum_rest_arq of sum_rest
+
+} {} {}} C:/YO/Facu/Sist_dig/Multiplicador/FFD.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/Multiplicador/FFD.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ffd
+-- Compiling architecture ffd_arq of ffd
+
+} {} {}} C:/YO/Facu/Sist_dig/Multiplicador/Multiplicador.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\YO\Facu\Sist_dig\Multiplicador\Multiplicador.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity multiplicador
+-- Compiling architecture multiplicador_arq of multiplicador
+
+} {} {}}
