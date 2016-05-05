@@ -24,7 +24,7 @@ begin
 			count := (others => '0');
 		elsif rising_edge(clk) then
 			if ena = '1' then
-				if (to_integer(unsigned(count)) = 2**(N) or to_integer(unsigned(count)) = TOPE) then		
+				if (to_integer(unsigned(count)) = 2**(N) or to_integer(unsigned(count)) = TOPE-1) then		
 					count := (others => '0');
 				else
 					count := std_logic_vector(unsigned(count) + 1);

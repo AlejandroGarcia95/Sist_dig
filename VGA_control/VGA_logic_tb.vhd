@@ -1,31 +1,14 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
+use work.includes_TP2.all;
+use work.includes.all;
 
-entity tb is
-end tb;
+entity vga_logic_tb is
+end vga_logic_tb;
 
-architecture tb_beh of tb is
-	component vga_logic is
-		port (
-			digit_selector: out std_logic_vector(2 downto 0);
-			font_row, font_col: out std_logic_vector(2 downto 0);
-			pixel_row: in std_logic_vector(9 downto 0);
-			pixel_col: in std_logic_vector(9 downto 0)
-		);
-	end component;
+architecture tb_beh of vga_logic_tb is
 	
-	component contador is
-		generic( N : natural := 2;
-				 TOPE : natural := 3);
-		port (
-			clk: in std_logic;		-- clock
-			rst: in std_logic;		-- reset, coloca el contador en 0
-			ena: in std_logic;		-- enable
-			count_out: out std_logic_vector(N-1 downto 0)
-		);
-	end component;	
-
 	signal pr_t, pc_t: std_logic_vector(9 downto 0);
 	signal dig_sel_t: std_logic_vector(2 downto 0);
 	signal fr_t, fc_t: std_logic_vector(2 downto 0);

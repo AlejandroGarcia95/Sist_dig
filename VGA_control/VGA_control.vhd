@@ -27,18 +27,18 @@ entity vga_ctrl is
 		pixel_col: out std_logic_vector(9 downto 0)
 	);
 
-	attribute loc: string;
+	-- attribute loc: string;
 			
 	-- Mapeo de pines para el kit Nexys 2 (spartan 3E)
-	attribute loc of mclk: signal is "B8";
-	attribute loc of red_i: signal is "K18";
-	attribute loc of grn_i: signal is "H18";
-	attribute loc of blu_i: signal is "G18";
-	attribute loc of hs: signal is "T4";
-	attribute loc of vs: signal is "U3";
-	attribute loc of red_o: signal is "R8 T8 R9";
-	attribute loc of grn_o: signal is "P6 P8 N8";
-	attribute loc of blu_o: signal is "U4 U5";
+	--attribute loc of mclk: signal is "B8";
+	--attribute loc of red_i: signal is "K18";
+	--attribute loc of grn_i: signal is "H18";
+	--attribute loc of blu_i: signal is "G18";
+	--attribute loc of hs: signal is "T4";
+	--attribute loc of vs: signal is "U3";
+	--attribute loc of red_o: signal is "R8 T8 R9";
+	--attribute loc of grn_o: signal is "P6 P8 N8";
+	--attribute loc of blu_o: signal is "U4 U5";
 
 	-- Mapeo de pines para el kit spartan 3E
 	-- attribute loc of mclk: signal is "C9";

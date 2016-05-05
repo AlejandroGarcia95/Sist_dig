@@ -7,8 +7,7 @@ entity cont_4dgt_disp is
 		-- Entradas de clock, reset y enabled
 		clk : in std_logic;
 		rst : in std_logic;
-		ena : in std_logic;
-		
+		ena : in std_logic;		
 
 		-- 4 bits para seleccionar un dígito del display
 		dgt_selector : out std_logic_vector(3 downto 0);
@@ -19,7 +18,6 @@ entity cont_4dgt_disp is
 end cont_4dgt_disp;
 
 architecture cont_4dgt_disp_arq of cont_4dgt_disp is
-
 	
 	signal digitos_act : std_logic_vector(15 downto 0) := (others => '0');	-- Array de dígitos que salen del contador
 	signal ena_1sec : std_logic := '0'; -- Señal de enable que entra al contador y determina el tiempo entre cuentas
