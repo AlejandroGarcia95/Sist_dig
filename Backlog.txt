@@ -3,8 +3,9 @@
 	- Terminar multiplicador 
 		- Y modificarlo para que sirva con signed y unsigned
 
-	- Hacer m骴ulo de control de VGA
-	- Hacer m骴ulo contador de unos del conversor
-	- Hacer m骴ulo de sigma-delta
+	- Hacer m贸dulo de control de VGA			[Casi est谩]
+	- Hacer m贸dulo contador de unos del conversor		[Done!.. probar con tb en digitilizer_tb2.vhd]
+	- Hacer m贸dulo de sigma-delta
 
 	- Hacer carpeta de componentes con package includes
+		- Refactoring y documentaci贸n de componentes antes de meterlos en la librer铆a
