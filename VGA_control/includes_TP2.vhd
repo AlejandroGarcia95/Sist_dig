@@ -42,9 +42,9 @@ package includes_TP2 is
 			-- Salidas para VGA
 			hsync : out std_logic;
 			vsync : out std_logic;
-			red_out : out std_logic;
-			grn_out : out std_logic;
-			blu_out : out std_logic
+			red_out : out std_logic_vector(2 downto 0);
+			grn_out : out std_logic_vector(2 downto 0);
+			blu_out : out std_logic_vector(1 downto 0)
 		);
 	end component video_logic;
 		

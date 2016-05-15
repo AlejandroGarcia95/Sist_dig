@@ -33,7 +33,7 @@ package includes is
 	end component deco_7s;
 	
 	component freq_div is
-		generic (N : natural);
+		generic (N : natural; M : natural);
 		port(
 			clk: in std_logic;
 			rst: in std_logic;

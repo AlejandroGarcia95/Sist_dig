@@ -138,24 +138,9 @@ begin
 	-- Habilitaci?n de la salida de datos por el display cuando se encuentra entre los porches
     vidon <= '1' when (((hc < hfp) and (hc > hbp)) and ((vc < vfp) and (vc > vbp))) else '0';
 
-	-- Ejemplos
-	-- Los colores est?n comandados por los switches de entrada del kit
-
-	-- Dibuja un cuadrado rojo
-    red_o <= (others => '1') when ((hc(9 downto 6) = "0111") and vc(9 downto 6) = "0100" and red_i = '1' and vidon ='1') else (others => '0');
-
-	-- Dibuja una linea roja (valor espec?fico del contador horizontal
-	-- red_o <= '1' when (hc = "1010101100" and red_i = '1' and vidon ='1') else '0';
-	
-	-- Dibuja una linea verde (valor espec?fico del contador horizontal)
-    grn_o <= (others => '1') when (hc = "0100000100" and grn_i = '1' and vidon ='1') else (others => '0');	
-	
-	-- Dibuja una linea azul (valor espec?fico del contador vertical)
-    blu_o <= (others => '1') when (vc = "0100100001" and blu_i = '1' and vidon ='1') else (others => '0');	
-
 	-- Pinta la pantalla del color formado por la combinaci?n de las entradas red_i, grn_i y blu_i (switches)
-	-- red_o <= '1' when (red_i = '1' and vidon = '1') else '0';
-	-- grn_o <= '1' when (grn_i = '1' and vidon = '1') else '0';
-	-- blu_o <= '1' when (blu_i = '1' and vidon = '1') else '0';
+	red_o <= (others => '1') when (red_i = '1' and vidon = '1') else (others => '0');
+	grn_o <= (others => '1') when (grn_i = '1' and vidon = '1') else (others => '0');
+	blu_o <= (others => '1') when (blu_i = '1' and vidon = '1') else (others => '0');
 
 end vga_ctrl_arq;

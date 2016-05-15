@@ -40,17 +40,17 @@ begin
 	process(block_row, block_col)
 	begin
 		if (unsigned(block_row) = block_row_d1 and unsigned(block_col) = block_col_d1) then
-			digit_selector <= "001";
-		elsif (unsigned(block_row) = block_row_comma and unsigned(block_col) = block_col_comma) then
-			digit_selector <= "010";
-		elsif (unsigned(block_row) = block_row_d2 and unsigned(block_col) = block_col_d2) then
-			digit_selector <= "011";
-		elsif (unsigned(block_row) = block_row_d3 and unsigned(block_col) = block_col_d3) then
-			digit_selector <= "100";
-		elsif (unsigned(block_row) = block_row_V and unsigned(block_col) = block_col_V) then
-			digit_selector <= "101";
-		else
 			digit_selector <= "000";
+		elsif (unsigned(block_row) = block_row_comma and unsigned(block_col) = block_col_comma) then
+			digit_selector <= "011";
+		elsif (unsigned(block_row) = block_row_d2 and unsigned(block_col) = block_col_d2) then
+			digit_selector <= "001";
+		elsif (unsigned(block_row) = block_row_d3 and unsigned(block_col) = block_col_d3) then
+			digit_selector <= "010";
+		elsif (unsigned(block_row) = block_row_V and unsigned(block_col) = block_col_V) then
+			digit_selector <= "100";
+		else
+			digit_selector <= "111";
 		end if;
 	end process;
 			

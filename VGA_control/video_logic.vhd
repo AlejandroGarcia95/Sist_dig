@@ -11,9 +11,9 @@ entity video_logic is
 		-- Salidas para VGA
 		hsync : out std_logic;
 		vsync : out std_logic;
-		red_out : out std_logic;
-		grn_out : out std_logic;
-		blu_out : out std_logic
+		red_out : out std_logic_vector(2 downto 0);
+		grn_out : out std_logic_vector(2 downto 0);
+		blu_out : out std_logic_vector(1 downto 0)
 	);
 end video_logic;
 
@@ -23,7 +23,7 @@ architecture video_logic_arc of video_logic is
 	-- Auxiliares para el multiplexor
 	signal mux_selected : std_logic_vector(5 downto 0);	-- Salida del multiplexor del selector de
 														-- caracteres (a la memoria ROM para recuperar información visual)
-	signal mux_selector_aux : std_logic_vector(3 downto 0);
+	signal mux_selector_aux : std_logic_vector(2 downto 0);
 	
 	-- Señal auxiliar para conectar VGA_Logic con Char_ROM
 	signal f_col_aux, f_row_aux : std_logic_vector(2 downto 0);
@@ -40,7 +40,7 @@ begin
 		port map(
 			digit_selector => mux_selector_aux,
 			font_row => f_row_aux,
-			font_col => f_row_aux,
+			font_col => f_col_aux,
 			pixel_col => p_col_aux,
 			pixel_row => p_row_aux
 		);
@@ -58,8 +58,8 @@ begin
 			grn_o => grn_out,
 			blu_o => blu_out,
 			
-			pixel_row => p_col_aux,
-			pixel_col => p_row_aux		
+			pixel_col => p_col_aux,
+			pixel_row => p_row_aux		
 		);
 		
 	myROM : Char_ROM
@@ -72,11 +72,11 @@ begin
 		);
 		
 	with mux_selector_aux select
-	mux_selected <= "00" & dgts(11 downto 8) when "000"
-					"00" & dgts(7 downto 4) when "001"
-					"00" & dgts(3 downto 0) when "010"
-					"001011" when "011"						-- Se supone que es la address de la ","
-					"001010" when "100"						-- Idem para la "V"
-					"001100" when others;					-- Alguna dirección en blanco
+	mux_selected <= "00" & dgts(11 downto 8) when "000",
+					"00" & dgts(7 downto 4) when "001",
+					"00" & dgts(3 downto 0) when "010",
+					"001011" when "011",						-- Se supone que es la address de la ","
+					"001010" when "100",						-- Idem para la "V"
+					"001111" when others;					-- Alguna dirección en blanco
 		
 end video_logic_arc;
