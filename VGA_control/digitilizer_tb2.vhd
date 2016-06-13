@@ -54,6 +54,7 @@ begin
 		
 
 	clk_t <= not clk_t after 5 ns;
-	sig_t <= '1' after 0 ns, '0' after 218000 ns, '1' after 400000 ns, '0' after 440000 ns;
+	sig_t <= '1' after 0 ns, '0' after 218000 ns, '1' after 400000 ns, '0' after 659600 ns;
+	--sig_t <= not sig_t after 15 ns;
 
 end beh;

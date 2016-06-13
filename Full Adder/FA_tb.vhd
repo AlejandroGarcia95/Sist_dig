@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
+use work.includes_FPAdder.all;
 
 entity f_adder_tb is
 end f_adder_tb;
