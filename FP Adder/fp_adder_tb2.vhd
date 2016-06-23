@@ -12,9 +12,9 @@ end fp_adder_tb2;
 
 architecture fp_adder_tb2_arq of fp_adder_tb2 is
 
-	constant E : natural := 7;
-	constant N : natural := 25;
-	constant G : natural := 1;
+	constant E : natural := 8;
+	constant N : natural := 30;
+	constant G : natural := 6;
 	
 	signal inputA_t, inputB_t, outputC_t : std_logic_vector(N-1 downto 0);
 	
@@ -168,8 +168,8 @@ begin
 		
 	clk_t <= not clk_t after 100 ns;
 
-	inputA_t <= "1011110101000110001110001" after 10 ns;
-	inputB_t <= "0011100110110101001100101" after 10 ns;
+	inputA_t <= "101111101000000110101110101001" after 10 ns;
+	inputB_t <= "001110111110110001011000100011" after 10 ns;
 	--			"1011110100101010111001010
 	--			 1011110100101010111001011
 	--	A:	"1 01111011 10111100010011010101100"

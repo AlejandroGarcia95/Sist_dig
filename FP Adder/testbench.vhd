@@ -11,9 +11,9 @@ end entity testbench;
 architecture simulacion of testbench is
 	constant TCK: time:= 20 ns; -- periodo de reloj
 	constant DELAY: natural:= 4; -- retardo de procesamiento del DUT
-	constant N: natural:= 30;	-- tamano de datos
-	constant E: natural:= 8;	-- tamano de datos
-	constant G: natural:= 4;
+	constant N: natural:= 23;	-- tamano de datos
+	constant E: natural:= 6;	-- tamano de datos
+	constant G: natural:= 6;
 
 	
 	signal clk: std_logic:= '0';
@@ -26,7 +26,7 @@ architecture simulacion of testbench is
 	-- z_del_aux se define por un problema de conversión
 	signal z_del_aux: std_logic_vector(N-1 downto 0):= (others => '0');
 	
-	file datos: text open read_mode is "C:\30-8.txt";
+	file datos: text open read_mode is "test_files_2015\suma\test_sum_float_23_6.txt";
 	
 	--for all: sum use entity work.sumador(arq_clock);
 
@@ -64,7 +64,7 @@ begin
 	end process Test_Sequence;
 			 
 	DUT : fp_adder
-		generic map (E => E, N => N, G => 4)				-- E = bits de exponente, N = bits totales
+		generic map (E => E, N => N, G => G)				-- E = bits de exponente, N = bits totales
 		port map(
 			clk => clk,
 			load => load_aux,
@@ -99,12 +99,12 @@ begin
 			", salida del archivo es " &
 			integer'image(to_integer(z_del)) & " : ERROR"
 			severity warning;
-		assert to_integer(z_del) /= to_integer(unsigned(z_dut)) report
-			"Salida del DUT es "& 
-			integer'image(to_integer(unsigned(z_dut))) &
-			", salida del archivo es " &
-			integer'image(to_integer(z_del)) & " : OK"
-			severity note;
+		--assert to_integer(z_del) /= to_integer(unsigned(z_dut)) report
+		--	"Salida del DUT es "& 
+		--	integer'image(to_integer(unsigned(z_dut))) &
+		--	", salida del archivo es " &
+		--	integer'image(to_integer(z_del)) & " : OK"
+		--	severity note;
 	end process;
 
 end architecture Simulacion; 

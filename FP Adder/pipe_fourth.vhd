@@ -38,18 +38,45 @@ begin
 			underflow => flags_aux(0)
 		);
 		
-	with flags_aux select
-		finalExp <= expSum_aux when "00",
-					(others => '1') when "10",
-					(others => '0') when "01",
-					(others => '1') when others;
+	process(expSum_aux, normFrac, flags_aux)
+	begin
+		if (to_integer(unsigned(normFrac)) = 0) then
+			finalExp <= (others => '0');
+			finalFrac <= (others => '0');
+		else
+			if flags_aux = "00" then
+				finalExp <= expSum_aux;
+				finalFrac <= normFrac;
+			elsif flags_aux = "10" then	-- overflow!
+				finalExp(E-1 downto 1) <= (others => '1');	-- Maximo exponente representable
+				finalExp(0) <= '0';
+				
+				finalFrac <= (others => '1');
+			elsif flags_aux = "01" then -- undeflow!
+					finalExp(E-1 downto 1) <= (others => '0');	-- Mínimo exponente representable
+					finalExp(0) <= '0';
+				
+				finalFrac <= (others => '0');
+			else	-- NaN?
+				finalExp <= (others => '1');
+				finalFrac <= (others => '1');
+			end if;
+		end if;
 	
-
-	with flags_aux select
-		finalFrac <= normFrac when "00",
-					(others => '0') when "10",
-					(others => '0') when "01",
-					(others => '1') when others;
+	end process;
+		
+--	with flags_aux select
+--		finalExp <= expSum_aux when "00",
+--					(others => '1') when "10",
+--					(others => '0') when "01",
+--					(others => '1') when others;
+--	
+--	
+--	with flags_aux select
+--		finalFrac <= normFrac when "00",
+--					(others => '0') when "10",
+--					(others => '0') when "01",
+--					(others => '1') when others;
 	
 	
 end adderFP_P4_arq;
