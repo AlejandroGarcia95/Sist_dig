@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-use work.includes.all;
+use work.includes_FPAdder.all;
 
 entity registro is
    generic (N: natural := 4);

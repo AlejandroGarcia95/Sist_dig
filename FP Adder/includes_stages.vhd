@@ -4,7 +4,7 @@ use IEEE.std_logic_1164.all;
 package includes_stages is
 	-- Primer etapa del pipeline del sumador de PF:
 	component adderFP_P1 is
-		generic (E : natural := 8; N : natural := 32);				-- E = bits de exponente, N = bits totales
+		generic (E : natural := 8; N : natural := 32; G : natural := 1);-- E = bits de exponente, N = bits totales
 		port(
 			expA : in std_logic_vector (E-1 downto 0);					-- Exponente del operando A
 			fracA : in std_logic_vector(N-E-2 downto 0);				-- Mantisa del operando A
@@ -26,7 +26,7 @@ package includes_stages is
 		-- Toma las dos mantisas ya desplazadas y con los respectivos '1' explicitados y las suma
 		-- Toma los signos de cada operando para saber si 
 	component adderFP_P2 is
-		generic (E : natural := 8; N : natural := 32);				-- E = bits de exponente, N = bits totales
+		generic (E : natural := 8; N : natural := 32; G : natural := 1);				-- E = bits de exponente, N = bits totales
 		port(
 			bigFrac : in std_logic_vector(N-E-1 downto 0);				-- Mantisa del operando de mayor exponente
 			litFrac : in std_logic_vector(N-E-1 downto 0);				-- Mantisa desplazada del operando menor
@@ -49,7 +49,7 @@ package includes_stages is
 		-- Normaliza el resultado de la suma de mantisas del paso anterior
 		-- Calcula en cuánto es necesario modificar al exponente
 	component adderFP_P3 is
-		generic (E : natural := 8; N : natural := 32);				-- E = bits de exponente, N = bits totales
+		generic (E : natural := 8; N : natural := 32; G : natural := 1);				-- E = bits de exponente, N = bits totales
 		port(
 			resFrac : in std_logic_vector(N-E downto 0);				-- Mantisa a normalizar
 			
@@ -81,7 +81,7 @@ package includes_stages is
 	
 	-- Adder armado
 	component fp_adder is
-		generic (E : natural := 8; N : natural := 32);				-- E = bits de exponente, N = bits totales
+		generic (E : natural := 8; N : natural := 32; G : natural := 4);				-- E = bits de exponente, N = bits totales
 		port(
 			clk : in std_logic;
 			load : in std_logic;

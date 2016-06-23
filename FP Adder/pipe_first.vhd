@@ -8,7 +8,7 @@ use work.includes_FPAdder.all;
 		-- Desplaza la mantisa del exponente menor para que coincidan los exponentes
 		-- Explicita los '1' implícitos en la representación
 entity adderFP_P1 is
-	generic (E : natural := 8; N : natural := 32);				-- E = bits de exponente, N = bits totales
+	generic (E : natural := 8; N : natural := 32; G : natural := 1);-- E = bits de exponente, N = bits totales
 	port(
 		expA : in std_logic_vector (E-1 downto 0);					-- Exponente del operando A
 		fracA : in std_logic_vector(N-E-2 downto 0);				-- Mantisa del operando A
@@ -17,17 +17,19 @@ entity adderFP_P1 is
 		fracB : in std_logic_vector(N-E-2 downto 0);				-- Mantisa del operando B
 
 		maxExp : out std_logic_vector(E-1 downto 0);				-- Exponente del operando mayor
-		bigFrac : out std_logic_vector(N-E-1 downto 0);				-- Mantisa del operando de mayor exponente (con el 1 explicitado)
-		litFrac : out std_logic_vector(N-E-1 downto 0);				-- Mantisa desplazada del operando menor
+		bigFrac : out std_logic_vector(N-E-1+G downto 0);				-- Mantisa del operando de mayor exponente (con el 1 explicitado)
+		litFrac : out std_logic_vector(N-E-1+G downto 0);				-- Mantisa desplazada del operando menor
 		bigFracIsA : out std_logic									-- Vale 1 si la fracción más grande corresponde a A
 	);
 end adderFP_P1;
 
 architecture adderFP_P1_arq of adderFP_P1 is
 
+	constant bits_de_guarda : std_logic_vector(G-1 downto 0) := (others => '0');
+
 	signal sft_amm_aux : std_logic_vector(E-1 downto 0);			-- Diferencia de exponentes, usada para el shifteo
 	signal expABig_aux : std_logic;
-	signal fracToShift : std_logic_vector(N-E-1 downto 0);
+	signal fracToShift : std_logic_vector(N-E-1+G downto 0);
 	
 begin
 	
@@ -43,7 +45,7 @@ begin
 	
 	-- El shifter
 	myShift : shifter
-		generic map (Nbits => N-E, MaxSft => E)
+		generic map (Nbits => N-E+G, MaxSft => E)
 		port map(
 			data_in => fracToShift,
 			sft_ammount => sft_amm_aux,
@@ -53,14 +55,14 @@ begin
 
 		
 	with expABig_aux select
-		fracToShift <=  ('1' & fracA) when '0',
-						('1' & fracB) when '1',
-						('1' & fracA) when others;
+		fracToShift <=  ('1' & fracA & bits_de_guarda) when '0',
+						('1' & fracB & bits_de_guarda) when '1',
+						('1' & fracA & bits_de_guarda) when others;
 						
 	with expABig_aux select
-		bigFrac <=  ('1' & fracA) when '1',
-					('1' & fracB) when '0',
-					('1' & fracA) when others;
+		bigFrac <=  ('1' & fracA & bits_de_guarda) when '1',
+					('1' & fracB & bits_de_guarda) when '0',
+					('1' & fracA & bits_de_guarda) when others;
 	
 	with expABig_aux select
 		maxExp <= expA when '1',

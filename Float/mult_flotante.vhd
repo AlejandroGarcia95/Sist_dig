@@ -64,17 +64,19 @@ begin
 	
 	--	variable exp_aux : unsigned (E downto 0);
 	begin
-		reg_in(S-1) <= a_in(S-1) xor b_in(S-1); -- Signo del numero
+		--reg_in(S-1) <= a_in(S-1) xor b_in(S-1); -- Signo del numero
 		
 		exp_sum := to_integer(unsigned(a_in(S-2 downto M))) + to_integer(unsigned(b_in(S-2 downto M))) + to_integer(unsigned(mant_aux(2*M+1 downto 2*M+1))) - 2*(e_max - 1);
 		if (exp_sum > e_max-1) then
-			reg_in(S-2 downto M) <= (others => '1');
-			reg_in(M-1 downto 0) <= (others => '0');
+			reg_in(S-1) <= a_in(S-1) xor b_in(S-1); -- Signo del numero
+			reg_in(S-2 downto M) <= (S-2 downto M+1 => '1') & '0';
+			reg_in(M-1 downto 0) <= (others => '1');
 		elsif (exp_sum < e_min+1) then
-			reg_in(S-2 downto 0) <= (others => '0');
+			reg_in(S-1 downto 0) <= (others => '0');
 		else
+			reg_in(S-1) <= a_in(S-1) xor b_in(S-1); -- Signo del numero
 			if (unsigned(a_in(S-2 downto 0)) = 0) or (unsigned(b_in(S-2 downto 0)) = 0) then
-				reg_in(S-1 downto 0) <= (others => '0');
+				reg_in(S-2 downto 0) <= (others => '0');
 			else
 				if mant_aux(2*M+1) = '1' then
 					reg_in(M-1 downto 0) <= mant_aux(2*M downto M+1);
@@ -84,14 +86,10 @@ begin
 			reg_in(S-2 downto M) <= std_logic_vector(to_unsigned(exp_sum + e_max - 1,E));
 			end if;
 		end if;
+		
+		--000001000010100000010100
+		--100101111011011011001110
 			
-		
-		
-		
-		
-		
-		
-		
 --	exp_aux := unsigned(a_in(S-2 downto M)) + unsigned(b_in(S-2 downto M)) + unsigned(mant_aux(2*M+1 downto 2*M+1)) - (2**(E-1) - 1);
 		
 		

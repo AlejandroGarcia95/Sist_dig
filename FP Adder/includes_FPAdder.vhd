@@ -87,4 +87,17 @@ package includes_FPAdder is
 			);
 	end component registro;
 
+		
+	component delay_gen is
+		generic(
+			N: natural:= 8;
+			DELAY: natural:= 0
+		);
+		port(
+			clk: in std_logic;
+			A: in std_logic_vector(N-1 downto 0);
+			B: out std_logic_vector(N-1 downto 0)
+		);
+	end component delay_gen;
+	
 end package;

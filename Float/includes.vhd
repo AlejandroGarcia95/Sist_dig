@@ -86,4 +86,27 @@ package includes is
 	   );
 	end component multiplicador;
 	
+	component mul_float is
+		generic (S: natural := 32; E: natural := 8);
+		port(
+			a_in: in std_logic_vector(S-1 downto 0);
+			b_in: in std_logic_vector(S-1 downto 0);
+			m_out: out std_logic_vector(S-1 downto 0);
+			clk: in std_logic;
+			load: in std_logic
+		);
+	end component mul_float;
+	
+	component delay_gen is
+		generic(
+			N: natural:= 8;
+			DELAY: natural:= 0
+		);
+		port(
+			clk: in std_logic;
+			A: in std_logic_vector(N-1 downto 0);
+			B: out std_logic_vector(N-1 downto 0)
+		);
+	end component delay_gen;
+	
 end package;
