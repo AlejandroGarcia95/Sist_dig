@@ -1,0 +1,8 @@
+﻿03/04:
+- Creé este log para dejar registro de los hitos más importantes (cambios en componentes, cosas nuevas, progreso gral., etc)
+- Inventé un convertidor de números binarios con bit de signo a números en complemento a 2. Lo usé además para mejorar el módulo sumador restador y tener un sumador restador de números signed.
+- Inventé una entidad de "cordic stage" que representa cada etapa del pipeline del cordic (cada cordic stage realiza una iteración del algoritmo de cordic).
+
+04/04:
+- Inventé el rotador de cordic pipeline en base a las cordic stages ya programadas. Funciona bien con un ejemplo simple.
+TODO: testear el Cordic más de lleno.
