@@ -16,6 +16,9 @@ begin
 	myCS: address_generator
 		generic map(COORD_N => 16)
 		port map (x_t, y_t, pixel_x_t, pixel_y_t, ena_t);
+		
+	-- Los puntos que se envian son, en orden: (0,0); (0.5,0); (1,0); (0,1);
+	-- (0.5,0.5); (-1,0); (-1,-1); (0.75,-1); (-0.75,1)
 
 	x_t <= "0000000000000000" after 5 ns, "0010000000000000" after 10 ns, "0100000000000000" after 15 ns,
 		   "0000000000000000" after 20 ns, "0010000000000000" after 25 ns, "1100000000000000" after 30 ns,

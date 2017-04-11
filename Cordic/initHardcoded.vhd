@@ -3,6 +3,10 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use work.includes_cordic.all;
 
+-- Componente hardcodeado para inicializar la memoria
+-- lógica del Cordic con 256 puntitos x,y que representan
+-- un vector (0.4,0).
+
 entity init_hardcoded is
    generic (COORD_N: natural := 16; ADDR_N: natural := 9; CANT_PUNTOS : natural := 256);
    port(
