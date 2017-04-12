@@ -2,7 +2,6 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use work.includes_vga.all;
-use work.includes.all;
 
 entity video_ram_tb is
 end video_ram_tb;
@@ -20,7 +19,7 @@ architecture tb_beh of video_ram_tb is
 	signal clk_t: std_logic := '0';
 	signal clk2_t: std_logic := '0';
 	
-	
+	signal reset_t: std_logic := '0';
 		
 begin
 
@@ -45,12 +44,16 @@ begin
 			pixel_col_in => pc_t,
 			pixel_row_in => pr_t,
 			data_in => reg_t,
-			write_flag => w_t
+			write_flag => w_t,
+			
+			reset => reset_t
 		);
 
 	reg_t <= "111";
-	clk_t <= not clk_t after 100 ns;	
-	clk2_t <= not clk2_t after 200 ns;	
+	clk_t <= not clk_t after 100 ns;
+	clk2_t <= not clk2_t after 200 ns;
+	
+	reset_t <= '1' after 2000 ns, '0' after 2400 ns;
 
 	w_t <= '0' after 1200 ns;
 	

@@ -19,7 +19,9 @@ entity video_ram is
 		pixel_col_in: in std_logic_vector(9 downto 0);
 		pixel_row_in: in std_logic_vector(9 downto 0);
 		data_in: in std_logic_vector(N-1 downto 0);
-		write_flag: in std_logic;	
+		write_flag: in std_logic;
+		
+		reset: in std_logic;
 		
 		clk: in std_logic
 	);
@@ -38,16 +40,20 @@ signal address_in : std_logic_vector(19 downto 0);
 
 begin
 
-address_out <= (pixel_col_out & pixel_row_in);
+address_out <= (pixel_col_out & pixel_row_out);
 address_in <= (pixel_col_in & pixel_row_in);
 
 process(clk)
 begin
 	if rising_edge(clk) then
-		if (write_flag = '1') then
-			ram(to_integer(unsigned(address_in))) <= data_in;
+		if (reset = '1') then
+			ram <= (others => (others => '0'));
+		else
+			if (write_flag = '1') then
+				ram(to_integer(unsigned(address_in))) <= data_in;
+			end if;
+			data_out <= ram(to_integer(unsigned(address_out)));
 		end if;
-		data_out <= ram(to_integer(unsigned(address_out)));
 	end if;
 end process;
 	
