@@ -77,9 +77,9 @@ architecture vga_ctrl_arq of vga_ctrl is
 	constant vfp: unsigned(9 downto 0) := "0111111111";	 -- Front porch vertical (511)
 
 	-- Contadores (horizontal y vertical)
-	signal hc, vc: unsigned(9 downto 0);
+	signal hc, vc: unsigned(9 downto 0) := (others => '0');
 	-- Flag para obtener una habilitaci?n cada dos ciclos de clock
-	signal clkdiv_flag: std_logic;
+	signal clkdiv_flag: std_logic := '0';
 	-- Senal para habilitar la visualizaci?n de datos
 	signal vidon: std_logic;
 	-- Senal para habilitar el contador vertical
@@ -92,7 +92,7 @@ begin
     begin
         if rising_edge(mclk) then
             clkdiv_flag <= not clkdiv_flag;
-        end if;
+		end if;
     end process;																			
 
     -- Contador horizontal
@@ -127,8 +127,8 @@ begin
         end if;
     end process;
 
-	-- hs <= '1' when (hc(9 downto 7) = "000") else '0';
-	-- vs <= '1' when (vc(9 downto 1) = "000000000") else '0';
+	--hs <= '1' when (hc(9 downto 7) = "000") else '0';
+	--vs <= '1' when (vc(9 downto 1) = "000000000") else '0';
     hs <= '1' when (hc < "0001100001") else '0';   -- Generaci?n de la se?al de sincronismo horizontal
     vs <= '1' when (vc < "0000000011") else '0';   -- Generaci?n de la se?al de sincronismo vertical
 

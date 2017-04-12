@@ -9,9 +9,9 @@ end vga_ctrl_tb;
 
 architecture tb_beh of vga_ctrl_tb is
 	
-	signal pr_t, pc_t: std_logic_vector(9 downto 0) := (others => '0');
+	signal pr_t, pc_t: std_logic_vector(9 downto 0);
 	
-	signal hs_t, vs_t: std_logic := '0';
+	signal hs_t, vs_t: std_logic;
 	signal red_i_t, grn_i_t, blu_i_t: std_logic := '1';
 	
 	signal red_o_t, grn_o_t: std_logic_vector(2 downto 0);
@@ -29,7 +29,7 @@ begin
 				pr_t, pc_t
 		);
 
-	clk_t <= not clk_t after 1 ns;	
+	clk_t <= not clk_t after 10 ns;	
 	
 end tb_beh;
 
