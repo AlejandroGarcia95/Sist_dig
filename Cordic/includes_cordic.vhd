@@ -68,6 +68,14 @@ package includes_cordic is
 	   );
 	end component comp2_signed_conv;
 	
+	component redondeador is
+	   generic (N_INICIAL: natural := 16; N_FINAL: natural := 8);
+	   port(
+		  num_in: in std_logic_vector(N_INICIAL-1 downto 0);
+		  num_out: out std_logic_vector(N_FINAL-1 downto 0)
+	   );
+	end component redondeador;
+	
 	component sum_rest_signed is
 	   generic (N: natural := 4);
 	   port(
