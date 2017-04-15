@@ -29,7 +29,10 @@ entity cordic_pipeline is
 	  z_old: in std_logic_vector(15 downto 0);
       x_new: out std_logic_vector(COORD_N-1 downto 0);
 	  y_new: out std_logic_vector(COORD_N-1 downto 0);
-	  clk: in std_logic
+	  valid_in: in std_logic;
+	  valid_out: out std_logic;
+	  clk: in std_logic;
+	  flush: in std_logic
    );
 end cordic_pipeline;
 
@@ -41,23 +44,27 @@ architecture cordic_pipeline_arq of cordic_pipeline is
 	"0000111110101101", "0001110110101100", "0011001001000011");		 		 							 			   
 	signal z_out: ANGULOS;
 	signal x_coords, y_coords: SALIDAS_CORDIC;
+	signal valids: std_logic_vector(STAGES-1 downto 0);
 begin
 
 	createCordic: for j in 0 to STAGES-1 generate
 		first_one: if j = 0 generate
 			myCS: cordic_stage
 				generic map(COORD_N => COORD_N, Z_N => 16, I => 0)
-				port map (x_old, y_old, z_old, x_coords(j), y_coords(j), z_out(j), tabla_arctg(j), clk);
+				port map (x_old, y_old, z_old, x_coords(j), y_coords(j), z_out(j), valid_in, valids(j),
+				tabla_arctg(j), clk, flush);
 		end generate first_one;
 		
 		the_others: if j > 0 generate
 			cordS: cordic_stage
 				generic map(COORD_N => COORD_N, Z_N => 16, I => j)
-				port map (x_coords(j-1), y_coords(j-1), z_out(j-1), x_coords(j), y_coords(j), z_out(j), tabla_arctg(j), clk);
+				port map (x_coords(j-1), y_coords(j-1), z_out(j-1), x_coords(j), y_coords(j), z_out(j), 
+				valids(j-1), valids(j), tabla_arctg(j), clk, flush);
 		end generate the_others;
 	end generate createCordic;
 
 	x_new <= x_coords(STAGES-1);
 	y_new <= y_coords(STAGES-1);
+	valid_out <= valids(STAGES-1);
 
 end cordic_pipeline_arq;

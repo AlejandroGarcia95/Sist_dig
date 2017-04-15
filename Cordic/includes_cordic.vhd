@@ -98,10 +98,29 @@ package includes_cordic is
 		  x_new: out std_logic_vector(COORD_N-1 downto 0);
 		  y_new: out std_logic_vector(COORD_N-1 downto 0);
 		  z_new: out std_logic_vector(Z_N-1 downto 0);
+		  valid_in: in std_logic;
+		  valid_out: out std_logic;
 		  cte: in std_logic_vector(Z_N-1 downto 0);
-		  clk: in std_logic
+		  clk: in std_logic;
+		  flush: in std_logic
 	   );
 	end component cordic_stage;
+	
+	component cordic_pipeline is
+	   generic (COORD_N: natural := 10; STAGES: natural := 5);
+	   port(
+		  x_old: in std_logic_vector(COORD_N-1 downto 0);
+		  y_old: in std_logic_vector(COORD_N-1 downto 0);
+		  z_old: in std_logic_vector(15 downto 0);
+		  x_new: out std_logic_vector(COORD_N-1 downto 0);
+		  y_new: out std_logic_vector(COORD_N-1 downto 0);
+		  valid_in: in std_logic;
+		  valid_out: out std_logic;
+		  clk: in std_logic;
+		  flush: in std_logic
+	   );
+	end component cordic_pipeline;
+	
 	
 	component address_generator is
 	   generic (COORD_N: natural := 10);
@@ -144,7 +163,86 @@ package includes_cordic is
 		  addr_x: out std_logic_vector(ADDR_N-1 downto 0);
 		  addr_y: out std_logic_vector(ADDR_N-1 downto 0);
 		  done: out std_logic;
+		  cant_ptos: out std_logic_vector(ADDR_N-1 downto 0);
 		  clk: in std_logic
 	   );
 	end component init_hardcoded;
+	
+	component ram_update_logic is
+	   generic (COORD_N: natural := 16; ADDR_N: natural := 9);
+	   port(
+			-- Cada pto que el Cordic termina de procesar y las
+			-- addr en las que hay que guardarlos
+			x_cordic: in std_logic_vector(COORD_N-1 downto 0);
+			y_cordic: in std_logic_vector(COORD_N-1 downto 0);
+			valid_cordic: in std_logic;
+			addr_A_in: out std_logic_vector(ADDR_N-1 downto 0);
+			addr_B_in: out std_logic_vector(ADDR_N-1 downto 0);
+			x_ram: out std_logic_vector(COORD_N-1 downto 0);
+			y_ram: out std_logic_vector(COORD_N-1 downto 0); 
+			-- Direcciones del próximo pto a procesar
+			addr_A_out: out std_logic_vector(ADDR_N-1 downto 0);
+			addr_B_out: out std_logic_vector(ADDR_N-1 downto 0);
+			go: in std_logic;	-- Bit para iniciar rotación
+			updating: out std_logic;
+			cant_ptos: in std_logic_vector(ADDR_N-1 downto 0);
+			load_finished: in std_logic;
+			clk: in std_logic
+	   );
+	end component ram_update_logic;
+	
+	component mult_stage is
+		generic (N: natural := 4);
+		port(
+			-- Valores provenientes de la etapa anterior
+			a_in: in std_logic_vector(N-1 downto 0);
+			b_in: in std_logic_vector(N-1 downto 0);
+			p_in: in std_logic_vector(N-1 downto 0);
+			valid_in: in std_logic;
+			
+			-- Valores a pasar a la siguiente etapa
+			a_out: out std_logic_vector(N-1 downto 0);
+			b_out: out std_logic_vector(N-1 downto 0);
+			p_out: out std_logic_vector(N-1 downto 0);
+			valid_out: out std_logic;
+			
+			clk: in std_logic;
+			
+			-- Bit para limpiar el pipe
+			flush: in std_logic
+		);
+	end component mult_stage;
+	
+	component multiplicador is
+		generic (N: natural := 4);
+		port(
+			-- Dos números a multiplicar, en punto fijo
+			a: in std_logic_vector(N-1 downto 0);
+			b: in std_logic_vector(N-1 downto 0);
+			valid_in: in std_logic;
+			
+			
+			s: out std_logic_vector(2*N-1 downto 0);
+			valid_out: out std_logic;
+			clk: in std_logic;
+			flush: in std_logic
+		);	
+	end component multiplicador;
+	
+	component logica_rotacional is
+	   generic (COORD_N: natural := 16; STAGES : natural := 10; ADDR_N: natural := 9);
+	   port(
+			-- Cada pto que se termina de procesar
+			x_out: out std_logic_vector(COORD_N-1 downto 0);
+			y_out: out std_logic_vector(COORD_N-1 downto 0);
+			valid: out std_logic;
+			-- Detección de rotación
+			z_in: in std_logic_vector(15 downto 0);
+			go: in std_logic;	-- Bit para iniciar rotación
+			-- Señal para borrar la mem. de video
+			video_reset: out std_logic;
+			clk: in std_logic
+	   );
+	end component logica_rotacional;
+	
 end package;

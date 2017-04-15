@@ -28,8 +28,11 @@ entity cordic_stage is
       x_new: out std_logic_vector(COORD_N-1 downto 0);
 	  y_new: out std_logic_vector(COORD_N-1 downto 0);
 	  z_new: out std_logic_vector(Z_N-1 downto 0);
+	  valid_in: in std_logic;
+	  valid_out: out std_logic;
 	  cte: in std_logic_vector(Z_N-1 downto 0);
-	  clk: in std_logic
+	  clk: in std_logic;
+	  flush: in std_logic
    );
 end cordic_stage;
 
@@ -37,6 +40,7 @@ architecture cordic_stage_arq of cordic_stage is
 	signal signo_z, no_signo_z: std_logic;
 	signal x_o, y_o, aux_a, aux_b: std_logic_vector(COORD_N-1 downto 0);
 	signal z_o: std_logic_vector(Z_N-1 downto 0);
+	signal v_o: std_logic := '0';
 begin
 	signo_z <= z_old(Z_N-1);
 	no_signo_z <= not(signo_z);
@@ -57,13 +61,15 @@ begin
 	
 	reg_x: registro
 		generic map(N => COORD_N)
-		port map(x_o, x_new, clk, '0', '1');
+		port map(x_o, x_new, clk, flush, '1');
 	reg_y: registro
 		generic map(N => COORD_N)
-		port map(y_o, y_new, clk, '0', '1');
+		port map(y_o, y_new, clk, flush, '1');
 	reg_z: registro
 		generic map(N => Z_N)
-		port map(z_o, z_new, clk, '0', '1');
+		port map(z_o, z_new, clk, flush, '1');
+	reg_V: ffd
+		port map(clk, flush, '1', valid_in, v_o);
 
-
+	valid_out <= v_o;
 end cordic_stage_arq;

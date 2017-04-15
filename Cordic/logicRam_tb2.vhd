@@ -24,7 +24,7 @@ begin
 
 	myHard: init_hardcoded
 		generic map(COORD_N => 16, ADDR_N => 9, CANT_PUNTOS => 256)
-		port map (a_in, b_in, addr_a_in, addr_b_in, done_t, clk_t);
+		port map (a_in, b_in, addr_a_in, addr_b_in, done_t, open, clk_t);
 		
 	
 	addr_a_out <= std_logic_vector(unsigned(addr_a_out)+1) after 10 ns;

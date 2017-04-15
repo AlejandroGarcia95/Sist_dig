@@ -13,13 +13,13 @@ architecture init_hardcoded_tb_arq of init_hardcoded_tb is
 	signal addr_x_t, addr_y_t, cuenta_t: std_logic_vector(8 downto 0);
 	signal done_t, ena_t: std_logic;
 	signal clk_t: std_logic := '1';
-	
+	signal puntos_t: std_logic_vector(8 downto 0);
 	signal cuenta_pr: std_logic_vector(8 downto 0);
 	
 begin
 	myHard: init_hardcoded
 		generic map(COORD_N => 16, ADDR_N => 9, CANT_PUNTOS => 256)
-		port map (x_t, y_t, addr_x_t, addr_y_t, done_t, clk_t);
+		port map (x_t, y_t, addr_x_t, addr_y_t, done_t, puntos_t, clk_t);
 		
 	clk_t <= not clk_t after 1 ns;
 	
