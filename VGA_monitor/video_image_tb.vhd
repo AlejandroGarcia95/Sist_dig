@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-use work.includes_vga.all;
+use work.includes.all;
 
 entity video_img_tb is
 end video_img_tb;
@@ -57,7 +57,7 @@ begin
 		
 	myHard: init_hardcoded
 		generic map(COORD_N => 16, ADDR_N => 9, CANT_PUNTOS => 256)
-		port map (x_t, y_t, open, open, open, clk_t);
+		port map (x_t, y_t, open, open, open, open, clk_t);
 
 	myCS: address_generator
 		generic map(COORD_N => 16)

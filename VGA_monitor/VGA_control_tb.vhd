@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-use work.includes_vga.all;
 use work.includes.all;
 
 entity vga_ctrl_tb is

@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-use work.includes_vga.all;
+use work.includes.all;
 
 -- El address_generator realiza la traducción de coord.
 -- lógicas (x,y) a coordenadas de píxeles en pantalla.

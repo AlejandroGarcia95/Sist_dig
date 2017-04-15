@@ -1,7 +1,29 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-package includes is
+package includes_cordic is
+			
+	-- Registro y FFD
+	component ffd is
+		port(
+			clk: in std_logic;
+			rst: in std_logic;
+			ena: in std_logic;
+			D: in std_logic;
+			Q: out std_logic
+		);
+	end component ffd;
+	
+	component registro is
+		generic (N: natural := 4);
+		port(
+			data_in: in std_logic_vector(N-1 downto 0);
+			data_out: out std_logic_vector(N-1 downto 0);
+			clk: in std_logic;
+			rst: in std_logic;
+			load: in std_logic
+			);
+	end component registro;
 
 	component contador is
 		generic( N : natural := 2 );
@@ -12,28 +34,8 @@ package includes is
 			count_out: out std_logic_vector(N-1 downto 0)
 		);
 	end component contador;
-	
-	component ffd is
-	   port(
-		  clk: in std_logic;
-		  rst: in std_logic;
-		  ena: in std_logic;
-		  D: in std_logic;
-		  Q: out std_logic
-	   );
-	end component ffd;
-	
-	component registro is
-	   generic (N: natural := 4);
-	   port(
-		  data_in: in std_logic_vector(N-1 downto 0);
-		  data_out: out std_logic_vector(N-1 downto 0);
-		  clk: in std_logic;
-		  rst: in std_logic;
-		  load: in std_logic
-	   );
-	end component registro;
-		component delay_gen is
+		
+	component delay_gen is
 		generic(
 			N: natural:= 8;
 			DELAY: natural:= 0
@@ -178,10 +180,10 @@ package includes is
 			addr_B_in: out std_logic_vector(ADDR_N-1 downto 0);
 			x_ram: out std_logic_vector(COORD_N-1 downto 0);
 			y_ram: out std_logic_vector(COORD_N-1 downto 0); 
-			-- Direcciones del pr髕imo pto a procesar
+			-- Direcciones del pr贸ximo pto a procesar
 			addr_A_out: out std_logic_vector(ADDR_N-1 downto 0);
 			addr_B_out: out std_logic_vector(ADDR_N-1 downto 0);
-			go: in std_logic;	-- Bit para iniciar rotaci髇
+			go: in std_logic;	-- Bit para iniciar rotaci贸n
 			updating: out std_logic;
 			cant_ptos: in std_logic_vector(ADDR_N-1 downto 0);
 			load_finished: in std_logic;
@@ -214,7 +216,7 @@ package includes is
 	component multiplicador is
 		generic (N: natural := 4);
 		port(
-			-- Dos n鷐eros a multiplicar, en punto fijo
+			-- Dos n煤meros a multiplicar, en punto fijo
 			a: in std_logic_vector(N-1 downto 0);
 			b: in std_logic_vector(N-1 downto 0);
 			valid_in: in std_logic;
@@ -234,78 +236,13 @@ package includes is
 			x_out: out std_logic_vector(COORD_N-1 downto 0);
 			y_out: out std_logic_vector(COORD_N-1 downto 0);
 			valid: out std_logic;
-			-- Detecci髇 de rotaci髇
+			-- Detecci贸n de rotaci贸n
 			z_in: in std_logic_vector(15 downto 0);
-			go: in std_logic;	-- Bit para iniciar rotaci髇
-			-- Se馻l para borrar la mem. de video
+			go: in std_logic;	-- Bit para iniciar rotaci贸n
+			-- Se帽al para borrar la mem. de video
 			video_reset: out std_logic;
 			clk: in std_logic
 	   );
 	end component logica_rotacional;
-
-	component video_ram is
-		generic(
-			W: natural := 640;		-- Ancho de la pantalla
-			H: natural := 480;		-- Alto de la pantalla
-			N: natural := 1			-- Cantidad de bits por pixel
-		);
-		
-		port(
-			-- Para obtener valores de la memoria
-			pixel_col_out: in std_logic_vector(9 downto 0);	-- 8 bits para seleccionar columna
-			pixel_row_out: in std_logic_vector(9 downto 0);	-- 8 bits para seleccionar fila
-			data_out: out std_logic_vector(N-1 downto 0);	-- Salida de los datos
-			
-			-- Para editar valores de la memoria
-			pixel_col_in: in std_logic_vector(9 downto 0);
-			pixel_row_in: in std_logic_vector(9 downto 0);
-			data_in: in std_logic_vector(N-1 downto 0);
-			write_flag: in std_logic;	
-			
-			reset: in std_logic;
-			
-			clk: in std_logic
-		);
-	end component video_ram;
-	
-	component vga_ctrl is
-		port (
-			mclk: in std_logic;
-			red_i: in std_logic;
-			grn_i: in std_logic;
-			blu_i: in std_logic;
-			hs: out std_logic;
-			vs: out std_logic;
-			red_o: out std_logic_vector(2 downto 0);
-			grn_o: out std_logic_vector(2 downto 0);
-			blu_o: out std_logic_vector(1 downto 0);
-			pixel_row: out std_logic_vector(9 downto 0);
-			pixel_col: out std_logic_vector(9 downto 0)
-		);
-	end component vga_ctrl;
-	
-	component video_plot is
-		generic ( COORD_N: natural := 16 );
-		port (
-			-- Entrada de coordenadas
-			coord_x: in std_logic_vector(COORD_N-1 downto 0);
-			coord_y: in std_logic_vector(COORD_N-1 downto 0);
-			valid: in std_logic;
-			
-			-- color: in std_logic_vector(2 downto 0);
-			
-			rst: in std_logic;
-			clk: in std_logic;
-		
-			-- Salida vga
-			hs: out std_logic;
-			vs: out std_logic;
-			red_out: out std_logic_vector(2 downto 0);
-			grn_out: out std_logic_vector(2 downto 0);
-			blu_out: out std_logic_vector(1 downto 0)
-		);
-
-	end component video_plot;
-
 	
 end package;

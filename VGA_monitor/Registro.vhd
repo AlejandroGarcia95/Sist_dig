@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-use work.includes.all;
 
 entity registro is
    generic (N: natural := 4);
@@ -15,6 +14,15 @@ entity registro is
 end registro;
 
 architecture registro_arq of registro is
+	component ffd is
+	   port(
+		  clk: in std_logic;
+		  rst: in std_logic;
+		  ena: in std_logic;
+		  D: in std_logic;
+		  Q: out std_logic
+	   );
+	end component ffd;
 
 begin
 	createFFDs: for i in 0 to N-1 generate
