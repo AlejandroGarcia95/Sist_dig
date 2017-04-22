@@ -307,5 +307,24 @@ package includes is
 
 	end component video_plot;
 
+	-- De aca en adelante viene el 3D
+	component cordic_3d is
+		generic ( COORD_N: natural := 16 );
+		port (
+			x_inicial: in std_logic_vector(COORD_N-1 downto 0);
+			y_inicial: in std_logic_vector(COORD_N-1 downto 0);
+			z_inicial: in std_logic_vector(COORD_N-1 downto 0);
+			angulo_x: in std_logic_vector(15 downto 0);
+			angulo_y: in std_logic_vector(15 downto 0);
+			angulo_z: in std_logic_vector(15 downto 0);
+			x_final: out std_logic_vector(COORD_N-1 downto 0);
+			y_final: out std_logic_vector(COORD_N-1 downto 0);
+			z_final: out std_logic_vector(COORD_N-1 downto 0);
+			valid_in: in std_logic;
+			valid_out: out std_logic;
+			clk: in std_logic;
+			flush: in std_logic
+		);
+	end component cordic_3d;
 	
 end package;

@@ -82,7 +82,7 @@ begin
 		generic map(COORD_N => COORD_N)
 		port map (
 			x_coord => coord_x,
-			y_coord => coord_x,
+			y_coord => coord_y,
 			pixel_x => address_x,
 			pixel_y => address_y,
 			ena => '1'

@@ -77,7 +77,6 @@ begin
 			load => '1'
 		);
 	reg_valid: ffd
-		generic map(N => 1)
 		port map(
 			D => valid_in,
 			Q => v_o,
