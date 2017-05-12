@@ -327,4 +327,16 @@ package includes is
 		);
 	end component cordic_3d;
 	
+	component address_generator_3d is
+		generic (COORD_N: natural := 10);
+		port(
+			x_coord: in std_logic_vector(COORD_N-1 downto 0);
+			y_coord: in std_logic_vector(COORD_N-1 downto 0);
+			z_coord: in std_logic_vector(COORD_N-1 downto 0);
+			pixel_x: out std_logic_vector(9 downto 0);
+			pixel_y: out std_logic_vector(8 downto 0);
+			ena: in std_logic
+		);
+	end component address_generator_3d;
+	
 end package;

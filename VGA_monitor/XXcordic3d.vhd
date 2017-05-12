@@ -3,6 +3,31 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use work.includes.all;
 
+-- El cordic_3d emplea el algoritmo de Cordic
+-- para rotar un vector de coord. (x, y, z)
+-- iniciales en 3 ángulos distintos respecto 
+-- los 3 ejes coordenados (primero se rota el
+-- pto angulo_x rad según el eje x, luego 
+-- angulo_y rad según el eje y, y finalmente
+-- angulo_z rad). Al ingresar un dato, se debe
+-- colocar valid_in en 1 para así poder ver una
+-- salida correcta cuando valid_out esté en 1.
+-- Los ángulos deben respetar el sgte formato:
+-- Pto fijo 16 bits, con el bit más pesado como 
+-- bit de signo, 1 bit de parte entera y 14 bits 
+-- de parte decimal. Las coord. del pto también son
+-- binarios de pto fijo con 1 bit de signo y 1
+-- bit de parte entera, pero la parte decimal
+-- varía según el generic COORD_N. COORD_N indica
+-- la cant. total de bits a usar (es decir, se
+-- usan COORD_N-2 bits de parte decimal).
+-- Si los ptos se ingresan uno detrás de otro en
+-- cada ciclo de CLK, la primer salida del comp. 
+-- tarda en generarse 30+COORD_N-3 ciclos de CLK, 
+-- pero luego de eso hay una por ciclo de CLK. 
+-- IMPORTANTE: la salida del componente YA ESTA 
+-- ESCALADA (no hay que agregar multiplicadores).
+
 
 entity cordic_3d is
 	generic ( COORD_N: natural := 16 );
