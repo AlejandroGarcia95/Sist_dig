@@ -245,8 +245,6 @@ package includes is
 
 	component video_ram is
 		generic(
-			W: natural := 640;		-- Ancho de la pantalla
-			H: natural := 480;		-- Alto de la pantalla
 			N: natural := 1			-- Cantidad de bits por pixel
 		);
 		
@@ -267,6 +265,23 @@ package includes is
 			clk: in std_logic
 		);
 	end component video_ram;
+	
+	component block_ram is
+		generic(
+			N: natural := 1			-- Cantidad de bits por dirección
+		);
+		
+		port(
+			ena: in std_logic;
+			enb: in std_logic;
+			wea: in std_logic;
+			addra: in std_logic_vector(19 downto 0);
+			addrb: in std_logic_vector(19 downto 0);
+			dia: in std_logic_vector(N-1 downto 0);
+			dob: out std_logic_vector(N-1 downto 0);
+			clk: in std_logic
+		);
+	end component block_ram;
 	
 	component vga_ctrl is
 		port (
