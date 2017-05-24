@@ -1,10 +1,11 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-use work.includes.all;
 
 entity video_ram is
 	generic(
+		W: natural := 640;		-- Ancho de la pantalla
+		H: natural := 480;		-- Alto de la pantalla
 		N: natural := 1			-- Cantidad de bits por pixel
 	);
 	
@@ -31,6 +32,9 @@ end video_ram;
 
 architecture video_ram_arq of video_ram is
 
+type ram_t is array (0 to 2**(20)-1) of std_logic_vector(N-1 downto 0);
+
+signal ram : ram_t := (others => (others => '0'));
 signal address_out : std_logic_vector(19 downto 0);
 signal address_in : std_logic_vector(19 downto 0);
 
@@ -39,17 +43,18 @@ begin
 address_out <= (pixel_col_out & pixel_row_out);
 address_in <= (pixel_col_in & pixel_row_in);
 
-bram : block_ram
-		generic map(N)
-		port map(
-			ena => '1',
-			enb => '1',
-			wea => write_flag,
-			addra => address_in,
-			addrb => address_out,
-			dia => data_in,
-			dob => data_out,
-			clk => clk			
-		);
-
+process(clk)
+begin
+	if rising_edge(clk) then
+		if (reset = '1') then
+			ram <= (others => (others => '0'));
+		else
+			if (write_flag = '1') then
+				ram(to_integer(unsigned(address_in))) <= data_in;
+			end if;
+			data_out <= ram(to_integer(unsigned(address_out)));
+		end if;
+	end if;
+end process;
+	
 end video_ram_arq;

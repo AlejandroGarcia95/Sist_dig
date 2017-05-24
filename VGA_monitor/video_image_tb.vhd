@@ -39,7 +39,7 @@ begin
 		);
 
 	v_ram : video_ram
-		generic map(640, 480, 3)
+		generic map(3)
 		port map(
 			clk => clk_t,
 			pixel_col_out => pc_t,

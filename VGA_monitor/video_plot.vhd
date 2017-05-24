@@ -62,7 +62,7 @@ begin
 
 	-- La memoria de video RAM dual port
 	v_ram : video_ram
-		generic map(W => 640, H => 480, N => 3)
+		generic map(N => 3)
 		port map(
 			clk => clk,
 			pixel_col_out => pixel_col,
@@ -82,7 +82,7 @@ begin
 		generic map(COORD_N => COORD_N)
 		port map (
 			x_coord => coord_x,
-			y_coord => coord_x,
+			y_coord => coord_y,
 			pixel_x => address_x,
 			pixel_y => address_y,
 			ena => '1'
