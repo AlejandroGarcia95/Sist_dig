@@ -321,7 +321,36 @@ package includes is
 		);
 
 	end component video_plot;
+	
+	component mini_logic_ram is
+		generic(
+			ADDR_N: natural := 15;
+			COORD_N: natural := 16			
+		);
+		
+		port(
+			-- Para obtener valores de la memoria
+			addr_A_out: in std_logic_vector(ADDR_N-1 downto 0);
+			data_A_out: out std_logic_vector(COORD_N-1 downto 0);
+			-- Para escribir valores de la memoria
+			addr_A_in: in std_logic_vector(ADDR_N-1 downto 0);
+			data_A_in: in std_logic_vector(COORD_N-1 downto 0);
+			write_flag: in std_logic;	
+			
+			clk: in std_logic
+		);
 
+
+	end component mini_logic_ram;
+	
+	component range_validator is
+	   generic (N: natural := 4; MAYOR: natural := 16; MENOR: natural := 0);
+	   port(
+			num_in: in std_logic_vector(N-1 downto 0);
+			range_ok: out std_logic
+	   );
+	end component range_validator;
+	
 	-- De aca en adelante viene el 3D
 	component cordic_3d is
 		generic ( COORD_N: natural := 16 );

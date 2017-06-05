@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
+use work.includes.all;
 
 -- El componente logic_ram es el encargado de
 -- amacenar las coordenadas del objeto 2D en
@@ -53,23 +54,43 @@ type ram_t is array (2**(ADDR_N)-1 downto 0) of std_logic_vector(COORD_N-1 downt
 shared variable ram: ram_t;
 
 begin
-	process(clk)
-	begin
-		if clk'event and clk = '1' then
-			if write_flag = '1' then
-				ram(to_integer(unsigned(addr_A_in))) := data_A_in;
-				ram(to_integer(unsigned(addr_B_in))) := data_B_in;
-			end if;
-		end if;
-	end process;
 
-	process(clk)
-	begin
-		if clk'event and clk = '1' then
-			data_A_out <= ram(to_integer(unsigned(addr_A_out)));
-			data_B_out <= ram(to_integer(unsigned(addr_B_out)));
-		end if;
-	end process;	
+	miniA: mini_logic_ram
+		generic map(
+			ADDR_N => ADDR_N ,
+			COORD_N => COORD_N			
+		)
+		
+		port map(
+			addr_A_out => addr_A_out,
+			data_A_out => data_A_out,
+			-- Para escribir valores de la memoria
+			addr_A_in => addr_A_in,
+			data_A_in => data_A_in,
+			write_flag => write_flag,
+			
+			clk => clk
+		);
+		
+	miniB: mini_logic_ram
+		generic map(
+			ADDR_N => ADDR_N ,
+			COORD_N => COORD_N			
+		)
+		
+		port map(
+			addr_A_out => addr_B_out,
+			data_A_out => data_B_out,
+			-- Para escribir valores de la memoria
+			addr_A_in => addr_B_in,
+			data_A_in => data_B_in,
+			write_flag => write_flag,
+			
+			clk => clk
+		);
+
+
+
 	
 end logic_ram_arq;
 
