@@ -39,15 +39,17 @@ architecture multiplicador_arq of multiplicador is
 	type VALID_CONNECTOR is array (N-1 downto 0) of std_logic;
 	signal a_mid, b_mid, p_mid: PIPE_CONNECTOR;
 	signal valid_mid: VALID_CONNECTOR;
+	signal p_aux: std_logic_vector(N-1 downto 0);
 	
 begin
+	p_aux <= (others => '0');
 
 	-- Creo N etapas
 	create_pipes: for j in 0 to N-1 generate
 		first_one: if j = 0  generate
 			first_stage: mult_stage
 				generic map(N => N)
-				port map(a, b, (others => '0'),	valid_in,
+				port map(a, b, p_aux, valid_in,
 						a_mid(0), b_mid(0), p_mid(0), valid_mid(0),
 						clk, flush);
 		end generate first_one;

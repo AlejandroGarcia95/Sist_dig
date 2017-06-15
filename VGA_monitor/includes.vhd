@@ -272,11 +272,9 @@ package includes is
 		);
 		
 		port(
-			ena: in std_logic;
-			enb: in std_logic;
 			wea: in std_logic;
-			addra: in std_logic_vector(19 downto 0);
-			addrb: in std_logic_vector(19 downto 0);
+			addra: in std_logic_vector(17 downto 0);
+			addrb: in std_logic_vector(17 downto 0);
 			dia: in std_logic_vector(N-1 downto 0);
 			dob: out std_logic_vector(N-1 downto 0);
 			clk: in std_logic

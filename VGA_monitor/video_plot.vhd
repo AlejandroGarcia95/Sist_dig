@@ -31,8 +31,8 @@ end video_plot;
 architecture video_plot_arq of video_plot is
 	
 	-- Salida y entrada de la memoria RAM
-	signal mem_out: std_logic_vector(2 downto 0) := (others => '0');
-	signal mem_in: std_logic_vector(2 downto 0) := (others => '0');
+	signal mem_out: std_logic_vector(0 downto 0) := (others => '0');
+	signal mem_in: std_logic_vector(0 downto 0) := (others => '0');
 	
 	-- Direcciones del barrido de pixeles
 	signal pixel_col, pixel_row: std_logic_vector(9 downto 0);
@@ -49,8 +49,8 @@ begin
 		port map(
 			mclk => clk,
 			red_i => mem_out(0),
-			grn_i => mem_out(1),
-			blu_i => mem_out(2),
+			grn_i => mem_out(0),
+			blu_i => mem_out(0),
 			hs => hs,
 			vs => vs,
 			red_o => red_out,
@@ -62,7 +62,7 @@ begin
 
 	-- La memoria de video RAM dual port
 	v_ram : video_ram
-		generic map(N => 3)
+		generic map(N => 1)
 		port map(
 			clk => clk,
 			pixel_col_out => pixel_col,
@@ -91,7 +91,7 @@ begin
 	address_col <= address_x(9 downto 0);
 	address_row <= '0' & address_y(8 downto 0);
 	
-	mem_in <= "111";
+	mem_in <= "1";
 
 	wr_flag <= valid;
 	
