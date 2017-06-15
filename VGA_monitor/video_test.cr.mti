@@ -1,0 +1,265 @@
+C:/YO/Facu/Sist_dig/VGA_monitor/VGA_control.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/VGA_control.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity vga_ctrl
+-- Compiling architecture vga_ctrl_arq of vga_ctrl
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/tp_rotador.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/tp_rotador.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity tp_rotador
+-- Compiling architecture tp_rotador_arq of tp_rotador
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/SumadorRestador.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/SumadorRestador.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity sum_rest
+-- Compiling architecture sum_rest_arq of sum_rest
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/Registro.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/Registro.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity registro
+-- Compiling architecture registro_arq of registro
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/cordicStage.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/cordicStage.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity cordic_stage
+-- Compiling architecture cordic_stage_arq of cordic_stage
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/FFD.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/FFD.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ffd
+-- Compiling architecture ffd_arq of ffd
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/SumadorRestadorSigned.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/SumadorRestadorSigned.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity sum_rest_signed
+-- Compiling architecture sum_rest_signed_arq of sum_rest_signed
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/block_ram.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/block_ram.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity block_ram
+-- Compiling architecture block_ram_arq of block_ram
+** Warning: C:/YO/Facu/Sist_dig/VGA_monitor/block_ram.vhd(35): (vcom-1236) Shared variables must be of a protected type.
+
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/contador.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/contador.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity contador
+-- Compiling architecture contador_arq of contador
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/includes_cordic.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/includes_cordic.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package includes_cordic
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/logicaRotacional.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/logicaRotacional.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity logica_rotacional
+-- Compiling architecture logica_rotacional_arq of logica_rotacional
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/includes_vga.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/includes_vga.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package includes_vga
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/video_plot.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/video_plot.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity video_plot
+-- Compiling architecture video_plot_arq of video_plot
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/Testbenchs/logicRam_tb1.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/Testbenchs/logicRam_tb1.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package includes
+-- Loading package NUMERIC_STD
+-- Compiling entity logic_ram_tb
+-- Compiling architecture logic_ram_tb_arq of logic_ram_tb
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/video_ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/video_ram.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity video_ram
+-- Compiling architecture video_ram_arq of video_ram
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/Testbenchs/videoRam_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/Testbenchs/videoRam_tb.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package includes
+-- Loading package NUMERIC_STD
+-- Compiling entity video_ram_tb
+-- Compiling architecture video_ram_tb_arq of video_ram_tb
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/redondeador.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/redondeador.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity redondeador
+-- Compiling architecture redondeador_arq of redondeador
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/mult_pipe.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/mult_pipe.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity multiplicador
+-- Compiling architecture multiplicador_arq of multiplicador
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/includes.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/includes.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package includes
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/ramUpdateLogic.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/ramUpdateLogic.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity ram_update_logic
+-- Compiling architecture ram_update_logic_arq of ram_update_logic
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/mini_logic_ram.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/mini_logic_ram.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mini_logic_ram
+-- Compiling architecture mini_logic_ram_arq of mini_logic_ram
+** Warning: C:/YO/Facu/Sist_dig/VGA_monitor/mini_logic_ram.vhd(31): (vcom-1236) Shared variables must be of a protected type.
+
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/comp2SignedConv.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/comp2SignedConv.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity comp2_signed_conv
+-- Compiling architecture comp2_signed_conv_arq of comp2_signed_conv
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/range_validator.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/range_validator.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity range_validator
+-- Compiling architecture range_validator_arq of range_validator
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/cordicPipeline.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/cordicPipeline.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity cordic_pipeline
+-- Compiling architecture cordic_pipeline_arq of cordic_pipeline
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/initHardcoded.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/initHardcoded.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity init_hardcoded
+-- Compiling architecture init_hardcoded_arq of init_hardcoded
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/logic_ram_newww.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/logic_ram_newww.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity logic_ram
+-- Compiling architecture logic_ram_arq of logic_ram
+** Warning: C:/YO/Facu/Sist_dig/VGA_monitor/logic_ram_newww.vhd(54): (vcom-1236) Shared variables must be of a protected type.
+
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/mult_stage.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/mult_stage.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity mult_stage
+-- Compiling architecture mult_stage_arq of mult_stage
+
+} {} {}} C:/YO/Facu/Sist_dig/VGA_monitor/addrGen.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/YO/Facu/Sist_dig/VGA_monitor/addrGen.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package includes
+-- Compiling entity address_generator
+-- Compiling architecture address_generator_arq of address_generator
+
+} {} {}}
