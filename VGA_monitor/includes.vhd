@@ -33,7 +33,19 @@ package includes is
 		  load: in std_logic
 	   );
 	end component registro;
-		component delay_gen is
+	
+	component shift_register is
+	generic(
+		N_DELAY: natural:= 10
+	);
+	port(
+		clk: in std_logic;
+		d_in: in std_logic;
+		d_out: out std_logic
+	);
+	end component;
+	
+	component delay_gen is
 		generic(
 			N: natural:= 8;
 			DELAY: natural:= 0

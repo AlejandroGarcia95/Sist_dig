@@ -11,7 +11,9 @@ entity tp_rotador is
 		grn_o: out std_logic_vector(2 downto 0);
 		blu_o: out std_logic_vector(1 downto 0);
 		
-		go: in std_logic;
+		count_go: in std_logic;
+		
+	--	go: in std_logic;
 		clk: in std_logic
 	);
 	
@@ -19,7 +21,7 @@ entity tp_rotador is
 			
 	-- Mapeo de pines para el kit Nexys 2 (spartan 3E)
 	attribute loc of clk: signal is "B8";
-	attribute loc of go: signal is "H13";
+	attribute loc of count_go: signal is "H13";
 	attribute loc of hs: signal is "T4";
 	attribute loc of vs: signal is "U3";
 	attribute loc of red_o: signal is "R8 T8 R9";
@@ -39,11 +41,34 @@ architecture tp_rotador_arq of tp_rotador is
 	signal valid_t: std_logic := '0';
 	signal go_t: std_logic := '0';
 
+	signal count_ena: std_logic := '0';
+	signal cuenta_out: std_logic_vector(2**26-1 downto 0);
 	
 	signal clk_t: std_logic := '0';	
 	signal reset_t: std_logic := '0';
 		
 begin		
+
+	myDelayCounter: contador
+		generic map( N => 26 )
+		port map(
+			clk => clk_t,
+			rst => '0',
+			ena => count_ena,
+			count_out => cuenta_out
+		);
+	
+	-- Para retrasar la flecha
+	process(clk)
+		begin
+		if rising_edge(clk) then
+			if (to_integer(unsigned(cuenta_out)) = 0) then
+				go_t <= '1';
+			else
+				go_t <= '0';
+			end if;
+		end if;
+		end process;
 
 	myVGA: video_plot
 		generic map( COORD_N => 16 )
@@ -86,7 +111,8 @@ begin
 	grn_o <= grn_o_t;
 	blu_o <= blu_o_t;
 		
-	go_t <= go;
+	count_ena <= count_go;
+--	go_t <= go;
 	clk_t <= clk;	
 end tp_rotador_arq;
 

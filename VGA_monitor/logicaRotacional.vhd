@@ -37,6 +37,7 @@ architecture logica_rotacional_arq of logica_rotacional is
 	signal xm, ym: std_logic_vector(2*(COORD_N-1)-1 downto 0);
 	signal vld_in_c, valid_out: std_logic;
 	signal vld_oc, vld_ox, vld_oy, v_o: std_logic;
+	signal signo_x, signo_y: std_logic;
 	-- La ganancia es de aprox. 1/0.607253 ergo hay que
 	-- multiplicar por 0.607253 para anularla.
 	signal ganancia: std_logic_vector(14 downto 0) := "010011011011101";
@@ -48,7 +49,7 @@ architecture logica_rotacional_arq of logica_rotacional is
 begin
 	-- initHardcoded que inicia la RAM. MATAR LUEGO
 	myIH: init_hardcoded
-		generic map(COORD_N => COORD_N, ADDR_N => ADDR_N, CANT_PUNTOS => 256)
+		generic map(COORD_N => COORD_N, ADDR_N => ADDR_N, CANT_PUNTOS => 5)
 		port map (mux_ram_I(2*(ADDR_N+COORD_N)-1 downto 2*ADDR_N+COORD_N), 
 		mux_ram_I(2*ADDR_N+COORD_N-1 downto 2*ADDR_N), mux_ram_I(2*ADDR_N-1 downto ADDR_N), 
 		mux_ram_I(ADDR_N-1 downto 0), init_done, rul_cantptos, clk);	
@@ -95,14 +96,25 @@ begin
 	multiY: multiplicador
 		generic map(N => COORD_N-1)
 		port map (ysc(COORD_N-2 downto 0), ganancia, vld_oc, ym, vld_oy, clk, "not"(init_done));
-		
+	
+	-- En estos shift registers tengo que guardar el signo del numero
+	-- mientras éste está siendo procesado en el multiplicador
+
+	mySR_x: shift_register
+		generic map(N_DELAY => COORD_N-1)
+		port map (clk, xsc(COORD_N-1), signo_x);
+
+	mySR_y: shift_register
+		generic map(N_DELAY => COORD_N-1)
+		port map (clk, ysc(COORD_N-1), signo_y);
+	
 	-- Mux de salida
 	with mux_sel select
-		mux_x_o <= 	xsc(COORD_N-1) & xm(2*(COORD_N-1)-2 downto COORD_N-2) when '1',
+		mux_x_o <= 	signo_x & xm(2*(COORD_N-1)-2 downto COORD_N-2) when '1',
 					mux_ram_I(2*(ADDR_N+COORD_N)-1 downto 2*ADDR_N+COORD_N) when '0',
 					(others => '0') when others;
 	with mux_sel select
-		mux_y_o <= 	ysc(COORD_N-1) & ym(2*(COORD_N-1)-2 downto COORD_N-2) when '1',
+		mux_y_o <= 	signo_y & ym(2*(COORD_N-1)-2 downto COORD_N-2) when '1',
 					mux_ram_I(2*ADDR_N+COORD_N-1 downto 2*ADDR_N) when '0',
 					(others => '0') when others;
 	-- valid_out a ffd
