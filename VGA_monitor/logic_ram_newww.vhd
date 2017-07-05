@@ -49,9 +49,9 @@ end logic_ram;
 
 architecture logic_ram_arq of logic_ram is
 
-type ram_t is array (2**(ADDR_N)-1 downto 0) of std_logic_vector(COORD_N-1 downto 0);
+--type ram_t is array (2**(ADDR_N)-1 downto 0) of std_logic_vector(COORD_N-1 downto 0);
 
-shared variable ram: ram_t;
+--shared variable ram: ram_t;
 
 begin
 

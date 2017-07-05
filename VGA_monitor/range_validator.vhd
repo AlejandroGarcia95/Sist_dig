@@ -17,7 +17,6 @@ entity range_validator is
 end range_validator;
 
 architecture range_validator_arq of range_validator is
-	signal aux_sel : std_logic_vector(1 downto 0);
 begin
 	process(num_in)
 		begin

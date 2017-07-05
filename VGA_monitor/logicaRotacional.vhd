@@ -49,7 +49,7 @@ architecture logica_rotacional_arq of logica_rotacional is
 begin
 	-- initHardcoded que inicia la RAM. MATAR LUEGO
 	myIH: init_hardcoded
-		generic map(COORD_N => COORD_N, ADDR_N => ADDR_N, CANT_PUNTOS => 5)
+		generic map(COORD_N => COORD_N, ADDR_N => ADDR_N, CANT_PUNTOS => 255)
 		port map (mux_ram_I(2*(ADDR_N+COORD_N)-1 downto 2*ADDR_N+COORD_N), 
 		mux_ram_I(2*ADDR_N+COORD_N-1 downto 2*ADDR_N), mux_ram_I(2*ADDR_N-1 downto ADDR_N), 
 		mux_ram_I(ADDR_N-1 downto 0), init_done, rul_cantptos, clk);	
@@ -58,7 +58,7 @@ begin
 	-- Lógica de actualización de la RAM
 	myRUL: ram_update_logic
 		generic map(COORD_N => COORD_N, ADDR_N => ADDR_N)
-		port map (mux_x_o, mux_y_o, valid_out, rul_addAin, rul_addBin, rul_xout, rul_yout, 
+		port map (mux_x_o, mux_y_o, v_o, rul_addAin, rul_addBin, rul_xout, rul_yout, 
 		rul_addAout, rul_addBout, rul_go, rul_updating, rul_cantptos, init_done,clk);	
 	
 	rul_go <= go and (not(rul_updating));
@@ -89,24 +89,14 @@ begin
 					'0' when others;
 	--rul_updating <= vld_in_c;
 	
-	multiX: multiplicador
-		generic map(N => COORD_N-1)
-		port map (xsc(COORD_N-2 downto 0), ganancia, vld_oc, xm, vld_ox, clk, "not"(init_done));
-	
-	multiY: multiplicador
-		generic map(N => COORD_N-1)
-		port map (ysc(COORD_N-2 downto 0), ganancia, vld_oc, ym, vld_oy, clk, "not"(init_done));
-	
-	-- En estos shift registers tengo que guardar el signo del numero
-	-- mientras éste está siendo procesado en el multiplicador
-
-	mySR_x: shift_register
-		generic map(N_DELAY => COORD_N-1)
-		port map (clk, xsc(COORD_N-1), signo_x);
-
-	mySR_y: shift_register
-		generic map(N_DELAY => COORD_N-1)
-		port map (clk, ysc(COORD_N-1), signo_y);
+		
+ 	multiX: multiplicador
+ 		generic map(N => COORD_N-1)
+ 		port map (xsc(COORD_N-2 downto 0), ganancia, vld_oc, xsc(COORD_N-1), xm, vld_ox, signo_x, clk, "not"(init_done));
+ 	
+ 	multiY: multiplicador
+ 		generic map(N => COORD_N-1)
+ 		port map (ysc(COORD_N-2 downto 0), ganancia, vld_oc, ysc(COORD_N-1), ym, vld_oy, signo_y, clk, "not"(init_done));
 	
 	-- Mux de salida
 	with mux_sel select
@@ -126,6 +116,7 @@ begin
 			rst => '0',
 			ena => '1'
 		);
+
 	-- Salidas del componente
 	x_out <= mux_x_o;
 	y_out <= mux_y_o;

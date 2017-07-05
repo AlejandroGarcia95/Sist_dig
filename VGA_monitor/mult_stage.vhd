@@ -30,12 +30,14 @@ entity mult_stage is
 		b_in: in std_logic_vector(N-1 downto 0);
 		p_in: in std_logic_vector(N-1 downto 0);
 		valid_in: in std_logic;
+		aux_sign_in: in std_logic;
 		
 		-- Valores a pasar a la siguiente etapa
 		a_out: out std_logic_vector(N-1 downto 0);
 		b_out: out std_logic_vector(N-1 downto 0);
 		p_out: out std_logic_vector(N-1 downto 0);
 		valid_out: out std_logic;
+		aux_sign_out: out std_logic;
 		
 		clk: in std_logic;
 		-- Bit para limpiar el pipe
@@ -80,6 +82,14 @@ begin
 		port map(
 			D => valid_in,
 			Q => v_o,
+			clk => clk,
+			rst => flush,
+			ena => '1'
+		);
+	reg_signo: ffd
+		port map(
+			D => aux_sign_in,
+			Q => aux_sign_out,
 			clk => clk,
 			rst => flush,
 			ena => '1'

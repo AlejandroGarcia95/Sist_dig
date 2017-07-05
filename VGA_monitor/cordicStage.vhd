@@ -41,11 +41,18 @@ architecture cordic_stage_arq of cordic_stage is
 	signal x_o, y_o, aux_a, aux_b: std_logic_vector(COORD_N-1 downto 0);
 	signal z_o: std_logic_vector(Z_N-1 downto 0);
 	signal v_o: std_logic := '0';
+	signal num_x, num_y: unsigned(COORD_N-2 downto 0);
 begin
 	signo_z <= z_old(Z_N-1);
 	no_signo_z <= not(signo_z);
-	aux_a <= (x_old(COORD_N-1) & (I-1 downto 0 => '0')& x_old(COORD_N-2 downto I)); 
-	aux_b <= (y_old(COORD_N-1) & (I-1 downto 0 => '0')& y_old(COORD_N-2 downto I)); 
+	num_x <= unsigned(x_old(COORD_N-2 downto 0));
+	num_y <= unsigned(y_old(COORD_N-2 downto 0));
+	aux_a <= (x_old(COORD_N-1) & std_logic_vector(shift_right(num_x, I)));  
+	aux_b <= (y_old(COORD_N-1) & std_logic_vector(shift_right(num_y, I)));  
+	
+--	aux_a <= (x_old(COORD_N-1) & (I-1 downto 0 => '0')& x_old(COORD_N-2 downto I)); 
+--	aux_b <= (y_old(COORD_N-1) & (I-1 downto 0 => '0')& y_old(COORD_N-2 downto I)); 
+--	r_Unsigned_R <= shift_right(unsigned(r_Shift1), 2);
 --	aux_a <= (x_old(COORD_N-1) & (vec_ceros or (x_old(COORD_N-I-2 downto 0))));
 --	aux_b <= (y_old(COORD_N-1) & (vec_ceros or (y_old(COORD_N-I-2 downto 0))));
 	

@@ -42,7 +42,7 @@ signal col_out_ok, row_out_ok, col_in_ok, row_in_ok: std_logic;
 signal lect_ok, escr_ok: std_logic;
 begin
 
--- Mappeo a la block ram, la cual sólo tiene 147455 direcciones
+-- Mappeo a la block ram, la cual sólo tiene 147456 direcciones
 -- representando cada pixel imprimible
 bram : block_ram
 		generic map(N)

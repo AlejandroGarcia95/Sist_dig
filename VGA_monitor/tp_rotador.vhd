@@ -11,8 +11,6 @@ entity tp_rotador is
 		grn_o: out std_logic_vector(2 downto 0);
 		blu_o: out std_logic_vector(1 downto 0);
 		
-		count_go: in std_logic;
-		
 	--	go: in std_logic;
 		clk: in std_logic
 	);
@@ -21,7 +19,7 @@ entity tp_rotador is
 			
 	-- Mapeo de pines para el kit Nexys 2 (spartan 3E)
 	attribute loc of clk: signal is "B8";
-	attribute loc of count_go: signal is "H13";
+--	attribute loc of go: signal is "H13";
 	attribute loc of hs: signal is "T4";
 	attribute loc of vs: signal is "U3";
 	attribute loc of red_o: signal is "R8 T8 R9";
@@ -38,27 +36,26 @@ architecture tp_rotador_arq of tp_rotador is
 	
 	signal x_t, y_t: std_logic_vector(15 downto 0) := (others => '0');
 
-	signal valid_t: std_logic := '0';
+	signal regInt_in, regInt_out: std_logic_vector(32 downto 0);
+	
+	signal valid_t: std_logic;
 	signal go_t: std_logic := '0';
 
-	signal count_ena: std_logic := '0';
-	signal cuenta_out: std_logic_vector(2**26-1 downto 0);
-	
+	signal cuenta_out: std_logic_vector(28 downto 0);
 	signal clk_t: std_logic := '0';	
 	signal reset_t: std_logic := '0';
 		
 begin		
 
 	myDelayCounter: contador
-		generic map( N => 26 )
+		generic map( N => 29 )
 		port map(
 			clk => clk_t,
 			rst => '0',
-			ena => count_ena,
+			ena => '1',
 			count_out => cuenta_out
 		);
-	
-	-- Para retrasar la flecha
+		
 	process(clk)
 		begin
 		if rising_edge(clk) then
@@ -73,9 +70,9 @@ begin
 	myVGA: video_plot
 		generic map( COORD_N => 16 )
 		port map(
-			coord_x => x_t,
-			coord_y => y_t,
-			valid => valid_t,
+			coord_x => regInt_out(31 downto 16),
+			coord_y => regInt_out(15 downto 0),
+			valid => regInt_out(32),
 			
 			rst => reset_t,
 			clk => clk_t,
@@ -87,7 +84,18 @@ begin
 			blu_out => blu_o_t
 		);
 
+	regInt: registro
+		generic map(N => 33)
+		port map(
+			data_in => regInt_in,
+			data_out => regInt_out,
+			clk => clk,
+			rst => '0',
+			load => '1'
+		);	
 		
+	regInt_in <= valid_t & x_t & y_t;
+	
 	myCORDIC : logica_rotacional
 		generic map(
 			COORD_N => 16,
@@ -99,7 +107,7 @@ begin
 			y_out => y_t,
 			valid => valid_t,
 			
-			z_in => "0001001001000011",
+			z_in => "0010110010101110",
 			go => go_t,
 			video_reset => reset_t,
 			clk => clk_t
@@ -111,10 +119,6 @@ begin
 	grn_o <= grn_o_t;
 	blu_o <= blu_o_t;
 		
-	count_ena <= count_go;
 --	go_t <= go;
 	clk_t <= clk;	
 end tp_rotador_arq;
-
-
-

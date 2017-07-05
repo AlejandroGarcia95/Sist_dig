@@ -24,10 +24,12 @@ entity multiplicador is
 		a: in std_logic_vector(N-1 downto 0);
 		b: in std_logic_vector(N-1 downto 0);
 		valid_in: in std_logic;
+		sign_in: in std_logic;
 		
 		
 		s: out std_logic_vector(2*N-1 downto 0);
 		valid_out: out std_logic;
+		sign_out: out std_logic;
 		clk: in std_logic;
 		flush: in std_logic
 	);
@@ -39,6 +41,7 @@ architecture multiplicador_arq of multiplicador is
 	type VALID_CONNECTOR is array (N-1 downto 0) of std_logic;
 	signal a_mid, b_mid, p_mid: PIPE_CONNECTOR;
 	signal valid_mid: VALID_CONNECTOR;
+	signal signos_mid: VALID_CONNECTOR;
 	signal p_aux: std_logic_vector(N-1 downto 0);
 	
 begin
@@ -49,16 +52,16 @@ begin
 		first_one: if j = 0  generate
 			first_stage: mult_stage
 				generic map(N => N)
-				port map(a, b, p_aux, valid_in,
-						a_mid(0), b_mid(0), p_mid(0), valid_mid(0),
+				port map(a, b, p_aux, valid_in, sign_in,
+						a_mid(0), b_mid(0), p_mid(0), valid_mid(0), signos_mid(0),
 						clk, flush);
 		end generate first_one;
 			
 		the_others: if j > 0 generate	
 			other_stage: mult_stage
 				generic map(N => N)
-				port map(a_mid(j-1), b_mid(j-1), p_mid(j-1), valid_mid(j-1),
-						a_mid(j), b_mid(j), p_mid(j), valid_mid(j),
+				port map(a_mid(j-1), b_mid(j-1), p_mid(j-1), valid_mid(j-1), signos_mid(j-1),
+						a_mid(j), b_mid(j), p_mid(j), valid_mid(j), signos_mid(j),
 						clk, flush);
 		end generate the_others;
 	end generate create_pipes;
@@ -66,5 +69,6 @@ begin
 	-- La salida del pipe
 	s <= p_mid(N-1) & b_mid(N-1);
 	valid_out <= valid_mid(N-1);
+	sign_out <= signos_mid(N-1);
 	
 end multiplicador_arq;

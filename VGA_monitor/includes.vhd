@@ -209,15 +209,16 @@ package includes is
 			b_in: in std_logic_vector(N-1 downto 0);
 			p_in: in std_logic_vector(N-1 downto 0);
 			valid_in: in std_logic;
+			aux_sign_in: in std_logic;
 			
 			-- Valores a pasar a la siguiente etapa
 			a_out: out std_logic_vector(N-1 downto 0);
 			b_out: out std_logic_vector(N-1 downto 0);
 			p_out: out std_logic_vector(N-1 downto 0);
 			valid_out: out std_logic;
+			aux_sign_out: out std_logic;
 			
 			clk: in std_logic;
-			
 			-- Bit para limpiar el pipe
 			flush: in std_logic
 		);
@@ -230,10 +231,12 @@ package includes is
 			a: in std_logic_vector(N-1 downto 0);
 			b: in std_logic_vector(N-1 downto 0);
 			valid_in: in std_logic;
+			sign_in: in std_logic;
 			
 			
 			s: out std_logic_vector(2*N-1 downto 0);
 			valid_out: out std_logic;
+			sign_out: out std_logic;
 			clk: in std_logic;
 			flush: in std_logic
 		);	
