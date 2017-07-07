@@ -36,6 +36,9 @@ architecture ensayo_dos_arq of ensayo_dos is
 
 	signal clk_t: std_logic := '0';	
 	
+	-- Replace componente tira_coord by the new UART
+	-- module to test it on screen.
+	-- Lab UART: Your code here.
 	component tira_coord is
 	   port(
 		  x_out: out std_logic_vector(15 downto 0);

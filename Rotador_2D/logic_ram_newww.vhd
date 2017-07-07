@@ -57,15 +57,15 @@ begin
 
 	miniA: mini_logic_ram
 		generic map(
-			ADDR_N => ADDR_N-1 ,
+			ADDR_N => ADDR_N ,
 			COORD_N => COORD_N			
 		)
 		
 		port map(
-			addr_A_out => addr_A_out(ADDR_N-2 downto 0),
+			addr_A_out => addr_A_out,
 			data_A_out => data_A_out,
 			-- Para escribir valores de la memoria
-			addr_A_in => addr_A_in(ADDR_N-2 downto 0),
+			addr_A_in => addr_A_in,
 			data_A_in => data_A_in,
 			write_flag => write_flag,
 			
@@ -74,15 +74,15 @@ begin
 		
 	miniB: mini_logic_ram
 		generic map(
-			ADDR_N => ADDR_N-1 ,
+			ADDR_N => ADDR_N ,
 			COORD_N => COORD_N			
 		)
 		
 		port map(
-			addr_A_out => addr_B_out(ADDR_N-2 downto 0),
+			addr_A_out => addr_B_out,
 			data_A_out => data_B_out,
 			-- Para escribir valores de la memoria
-			addr_A_in => addr_B_in(ADDR_N-2 downto 0),
+			addr_A_in => addr_B_in,
 			data_A_in => data_B_in,
 			write_flag => write_flag,
 			

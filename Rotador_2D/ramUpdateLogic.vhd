@@ -71,8 +71,8 @@ begin
 		port map (clk, counter_i_rst, counter_i_ena, cuenta_i);
 
 	-- Lectura de la memoria
-	addr_A_out <= cuenta_o;
-	addr_B_out <= cuenta_o;
+	addr_A_out <= cuenta_o(ADDR_N-2 downto 0) & '0';
+	addr_B_out <= cuenta_o(ADDR_N-2 downto 0) & '1';
 	with load_finished select
 		updating <= 	counter_o_ena when '1',
 						'0' when others;
@@ -81,7 +81,7 @@ begin
 	with load_finished select
 		counter_i_ena <= 	valid_cordic when '1',
 							'0' when others;
-	addr_A_in <= cuenta_i;
-	addr_B_in <= cuenta_i;
+	addr_A_in <= cuenta_i(ADDR_N-2 downto 0) & '0';
+	addr_B_in <= cuenta_i(ADDR_N-2 downto 0) & '1';
 		
 end ram_update_logic_arq;

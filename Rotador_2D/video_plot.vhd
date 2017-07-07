@@ -15,10 +15,6 @@ entity video_plot is
 		
 		-- color: in std_logic_vector(2 downto 0);
 		
-		-- Add new output terminal to video_plot.
-		-- Lab reset: Your code here.
-		
-		
 		rst: in std_logic;
 		clk: in std_logic;
 	
@@ -80,18 +76,7 @@ begin
 			write_flag => wr_flag,
 			reset => rst
 		);
-	
-	-- Lab reset: Your code here.
-
-	
-	
-	-- Perdón, tenía que hacerlo xd
-	
-	
-	-- Modify address_generator outputs to
-	-- address video_ram only when not reset
-	-- signal is being received.
-	
+		
 	-- Conversor de coordenadas a pixeles
 	myCS: address_generator
 		generic map(COORD_N => COORD_N)

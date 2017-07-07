@@ -322,9 +322,6 @@ package includes is
 			
 			-- color: in std_logic_vector(2 downto 0);
 			
-			-- Add new output terminal to video_plot.
-			-- Lab reset: Your code here.
-			
 			rst: in std_logic;
 			clk: in std_logic;
 		

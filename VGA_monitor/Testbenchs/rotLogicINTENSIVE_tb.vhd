@@ -23,7 +23,7 @@ architecture logica_rotacional_tb_arq of logica_rotacional_tb is
 	end component tira_pixeles;
 begin
 	myRL: logica_rotacional
-		generic map(COORD_N => 16, STAGES => 10, ADDR_N => 9)
+		generic map(COORD_N => 16, STAGES => 10, ADDR_N => 3)
 		port map (x_t, y_t, v_t, z_t, go_t, resetV_t, clk_t);
 
 	z_t <= "0010110010101110";
