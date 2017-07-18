@@ -1,7 +1,24 @@
-	Muy bien Juan, si estás leyendo esto lo más probable es que entonces me encuentre muerto... O de vacaciones, no sé, lo importante es que estoy desaparecido y necesitás saber qué hacer con todas estas negradas en VHDL.
+	Muy bien Juan, si estás leyendo esto lo más probable es que entonces me encuentre muerto... O de vacaciones, no sé, lo importante es que 
+	estoy desaparecido y necesitás saber qué hacer con todas estas negradas en VHDL.
 
-	Básicamente, metí todos los .vhd relevantes para la flecha rotadora tal cual estaban funcionando el otro día en la carpeta Rotador_2D. Así que no los toques todavía para que queden impolutos! Primero hacete el reset en los archivos dentro de VGA_monitor, y si ves que funca ahí daría para reemplazarlo.
+	Básicamente, metí todos los .vhd relevantes para la flecha rotadora tal cual estaban funcionando el otro día en la carpeta Rotador_2D.
+	Así que no los toques todavía para que queden impolutos! Primero hacete el reset en los archivos dentro de VGA_monitor, y si ves que funca ahí
+	daría para reemplazarlo.
 
-	Hablemos del reset entonces: por el momento, la lógica rotacional y el video plot están conectados según indica la fig. 1A. Obviamente, si bien la lógica rotacional envía la señal de reset en el momento oportuno, no tiene forma de "detectar" a partir de cuándo empezar a mandar los nuevos puntos rotados. La idea sería que le agregues al video plot un terminal más de salida que sea una señal de "che, ya limpié la memoria de la pantalla, podés empezar a mandarme los puntos", y que en base a eso la lógica rotacional supiera cuándo empezar a tirarte los puntos rotados. Si bien podría agregarle una pata más a la lógica rotacional para que empiece a devolver los puntos rotados sólo cuando se pone en 1, si mejor se conecta todo según la fig. 1B todo sale bien, y no hay que modificar para nada la lógica rotacional. En resumen, modifica el video plot para que cuando reciba un 1 en su pata de reset limpie toda la video RAM, y cuando termine mande un 1 por esa otra pata (que dure al menos hasta el próximo flanco ascendente de CLK para poder detectarlo!)
+	Hablemos del reset entonces: por el momento, la lógica rotacional y el video plot están conectados según indica la fig. 1A.
+	Obviamente, si bien la lógica rotacional envía la señal de reset en el momento oportuno, no tiene forma de "detectar" a partir de
+	cuándo empezar a mandar los nuevos puntos rotados. La idea sería que le agregues al video plot un terminal más de salida que sea una señal
+	de "che, ya limpié la memoria de la pantalla, podés empezar a mandarme los puntos", y que en base a eso la lógica rotacional supiera cuándo
+	empezar a tirarte los puntos rotados. Si bien podría agregarle una pata más a la lógica rotacional para que empiece a devolver los puntos
+	rotados sólo cuando se pone en 1, si mejor se conecta todo según la fig. 1B todo sale bien, y no hay que modificar para nada la lógica rotacional.
+	En resumen, modifica el video plot para que cuando reciba un 1 en su pata de reset limpie toda la video RAM, y cuando termine mande un 1 por esa
+	otra pata (que dure al menos hasta el próximo flanco ascendente de CLK para poder detectarlo!)
 
-	Lo otro que tenés que hacer es lo de la UART. Los archivos correspondientes a ese módulo maligno están en el campus, al igual que el power point que (pseudo) explica cómo funcan. La idea sería que programes un componentes que fuera capaz de reemplazar directamente a mi bello init_hardcoded: tiene que tirar las coordenadas x,y de todos los puntos, una atrás de la otra, y las direcciones de memoria en las que se tienen que guardar (por convención estoy guardando las coord. x en las direcciones pares y las coord. y en las impares. Ej: los puntos (a, b); (c, d) recibidos en ese orden se guardarían en la memoria así: 0x0=a, 0x1=b, 0x2=c, 0x3=d). Una vez que termina la carga de puntos, tiene que además mandar una señal de que la carga terminó, y la cant. de puntos cargados! Para poder testearlo en la FPGA sin depender de la lógica rotacional, el archivo ensayoDos.vhd en la carpeta VGA_monitor/Others tiene una simple prueba de la unidad de video con un componente que sólamente tira valores de x,y. Podés entonces matar ese componente y conectar el nuevo módulo UART ahí para ver si anda.
+	Lo otro que tenés que hacer es lo de la UART. Los archivos correspondientes a ese módulo maligno están en el campus, al igual que el power point
+	que (pseudo) explica cómo funcan. La idea sería que programes un componentes que fuera capaz de reemplazar directamente a mi bello init_hardcoded:
+	tiene que tirar las coordenadas x,y de todos los puntos, una atrás de la otra, y las direcciones de memoria en las que se tienen que guardar
+	(por convención estoy guardando las coord. x en las direcciones pares y las coord. y en las impares. Ej: los puntos (a, b); (c, d) recibidos
+	en ese orden se guardarían en la memoria así: 0x0=a, 0x1=b, 0x2=c, 0x3=d). Una vez que termina la carga de puntos, tiene que además mandar una señal
+	de que la carga terminó, y la cant. de puntos cargados! Para poder testearlo en la FPGA sin depender de la lógica rotacional, el archivo ensayoDos.vhd
+	en la carpeta VGA_monitor/Others tiene una simple prueba de la unidad de video con un componente que sólamente tira valores de x,y. Podés entonces
+	matar ese componente y conectar el nuevo módulo UART ahí para ver si anda.

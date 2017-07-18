@@ -275,8 +275,6 @@ package includes is
 			data_in: in std_logic_vector(N-1 downto 0);
 			write_flag: in std_logic;	
 			
-			reset: in std_logic;
-			
 			clk: in std_logic
 		);
 	end component video_ram;
@@ -308,9 +306,23 @@ package includes is
 			grn_o: out std_logic_vector(2 downto 0);
 			blu_o: out std_logic_vector(1 downto 0);
 			pixel_row: out std_logic_vector(9 downto 0);
-			pixel_col: out std_logic_vector(9 downto 0)
+			pixel_col: out std_logic_vector(9 downto 0);
+			swipe_start: out std_logic
 		);
 	end component vga_ctrl;
+	
+	component video_reset is
+		port (
+			sig_swipe_start: in std_logic;
+			sig_reset: in std_logic;
+			
+			is_resetting: out std_logic;
+			is_waiting: out std_logic;
+			
+			done_rst: out std_logic;
+			clk: in std_logic
+		);
+	end component video_reset;
 	
 	component video_plot is
 		generic ( COORD_N: natural := 16 );

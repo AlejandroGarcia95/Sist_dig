@@ -15,11 +15,17 @@ entity video_plot is
 		
 		-- color: in std_logic_vector(2 downto 0);
 		
-		-- Add new output terminal to video_plot.
-		-- Lab reset: Your code here.
-		
+		-- Sistema de reset del plotter
+		-- Enviar un pulso durante al menos un ciclo de reloj.
+		-- Esto hace que la memoria entre en estado RESET. Durante este estado
+		-- la memoria esperará a que termine el barrido de pantalla actual. En
+		-- el siguiente barrido, se ignorará TODA entrada y se irá borrando progresivamente
+		-- la memoria. Cuando el barrido de borrado termine, el estado pasa a READY de nuevo
+		-- y se envía un pulso de un ciclo de reloj en la salida done_rst.
 		
 		rst: in std_logic;
+		done_rst: out std_logic;
+		
 		clk: in std_logic;
 	
 		-- Salida vga
@@ -47,6 +53,10 @@ architecture video_plot_arq of video_plot is
 
 	signal wr_flag: std_logic;
 	
+	-- Señal del video_ram que se pone en '1' al comenzar un nuevo barrido de pantalla
+	signal swipe_start: std_logic := '0';
+	signal resetting: std_logic := '0';
+	
 begin
 	-- El controlador que hace el barrido y genera salida vga
 	v_ctrl : vga_ctrl
@@ -61,7 +71,8 @@ begin
 			grn_o => grn_out,
 			blu_o => blu_out,
 			pixel_row => pixel_row,
-			pixel_col => pixel_col
+			pixel_col => pixel_col,
+			swipe_start => swipe_start
 		);
 
 	-- La memoria de video RAM dual port
@@ -77,17 +88,22 @@ begin
 			pixel_row_in => address_row,
 			data_in => mem_in,
 			
-			write_flag => wr_flag,
-			reset => rst
+			write_flag => wr_flag
 		);
 	
 	-- Lab reset: Your code here.
-
-	
-	
-	-- Perdón, tenía que hacerlo xd
-	
-	
+	v_rst : video_reset
+		port map(
+		clk => clk,
+		
+		sig_swipe_start => swipe_start,
+		sig_reset => rst,
+		
+		is_resetting => resetting,
+		is_waiting => open,
+		
+		done_rst => done_rst
+		);
 	-- Modify address_generator outputs to
 	-- address video_ram only when not reset
 	-- signal is being received.
@@ -103,12 +119,13 @@ begin
 			ena => '1'
 		);
 		
-	address_col <= address_x(9 downto 0);
-	address_row <= '0' & address_y(8 downto 0);
+	-- Si está en modo ressetting, pisar siempre con ceros
+	address_col <= address_x(9 downto 0) when (resetting = '0') else (others => '0');
+	address_row <= '0' & address_y(8 downto 0) when (resetting = '0') else (others => '0');
+	wr_flag <= valid when (resetting = '0') else '1';
 	
 	mem_in <= "1";
 
-	wr_flag <= valid;
 	
 end video_plot_arq;
 

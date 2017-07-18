@@ -24,7 +24,8 @@ entity vga_ctrl is
 		grn_o: out std_logic_vector(2 downto 0);
 		blu_o: out std_logic_vector(1 downto 0);
 		pixel_row: out std_logic_vector(9 downto 0);
-		pixel_col: out std_logic_vector(9 downto 0)
+		pixel_col: out std_logic_vector(9 downto 0);
+		swipe_start: out std_logic
 	);
 
 	-- attribute loc: string;
@@ -119,9 +120,11 @@ begin
                 if vsenable = '1' then          -- Cuando el cont horiz llega al m?ximo de su cuenta habilita al cont vert
                     if vc = vlines then															 
                         vc <= (others => '0');  -- El cont vert se resetea cuando alcanza la cantidad maxima de lineas
+						swipe_start <= '1';
                     else
                         vc <= vc + 1;           -- Incremento del cont vert
-                    end if;
+						swipe_start <= '0';
+					end if;
                 end if;
             end if;
         end if;

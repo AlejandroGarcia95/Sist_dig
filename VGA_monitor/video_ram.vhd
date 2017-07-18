@@ -22,8 +22,6 @@ entity video_ram is
 		data_in: in std_logic_vector(N-1 downto 0);
 		write_flag: in std_logic;
 		
-		reset: in std_logic;
-		
 		clk: in std_logic
 	);
 
