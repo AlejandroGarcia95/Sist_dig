@@ -86,6 +86,8 @@ architecture vga_ctrl_arq of vga_ctrl is
 	-- Senal para habilitar el contador vertical
 	signal vsenable: std_logic;
 	
+	signal swipe_start_aux: std_logic := '0';
+	
 
 begin
     -- Divisi?n de la frecuencia del reloj
@@ -120,13 +122,15 @@ begin
                 if vsenable = '1' then          -- Cuando el cont horiz llega al m?ximo de su cuenta habilita al cont vert
                     if vc = vlines then															 
                         vc <= (others => '0');  -- El cont vert se resetea cuando alcanza la cantidad maxima de lineas
-						swipe_start <= '1';
+						swipe_start_aux <= '1';
                     else
                         vc <= vc + 1;           -- Incremento del cont vert
-						swipe_start <= '0';
 					end if;
                 end if;
             end if;
+			if swipe_start_aux = '1' then
+				swipe_start_aux <= '0';
+			end if;
         end if;
     end process;
 
@@ -146,4 +150,5 @@ begin
 	grn_o <= (others => '1') when (grn_i = '1' and vidon = '1') else (others => '0');
 	blu_o <= (others => '1') when (blu_i = '1' and vidon = '1') else (others => '0');
 
+	swipe_start <= swipe_start_aux;
 end vga_ctrl_arq;

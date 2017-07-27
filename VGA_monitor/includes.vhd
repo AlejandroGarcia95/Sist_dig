@@ -338,6 +338,7 @@ package includes is
 			-- Lab reset: Your code here.
 			
 			rst: in std_logic;
+			done_rst: out std_logic;
 			clk: in std_logic;
 		
 			-- Salida vga
@@ -379,7 +380,11 @@ package includes is
 	   );
 	end component range_validator;
 	
+	--
+	--
 	-- De aca en adelante viene el 3D
+	--
+	--
 	component cordic_3d is
 		generic ( COORD_N: natural := 16 );
 		port (
@@ -410,5 +415,151 @@ package includes is
 			ena: in std_logic
 		);
 	end component address_generator_3d;
+	
+	
+	component init_hardcoded_3d is
+	   generic (COORD_N: natural := 16; ADDR_N: natural := 12; CANT_PUNTOS : natural := 510);
+	   port(
+		  x_out: out std_logic_vector(COORD_N-1 downto 0);
+		  y_out: out std_logic_vector(COORD_N-1 downto 0);
+		  z_out: out std_logic_vector(COORD_N-1 downto 0);  
+		  addr_x: out std_logic_vector(ADDR_N-1 downto 0);
+		  addr_y: out std_logic_vector(ADDR_N-1 downto 0);
+		  addr_z: out std_logic_vector(ADDR_N-1 downto 0);
+		  done: out std_logic;
+		  cant_ptos: out std_logic_vector(ADDR_N-1 downto 0);
+		  clk: in std_logic
+	   );
+	end component init_hardcoded_3d;
+	
+	
+	component ram_update_logic_3d is
+	   generic (COORD_N: natural := 16; ADDR_N: natural := 9);
+	   port(
+			-- Cada pto que el Cordic termina de procesar y las
+			-- addr en las que hay que guardarlos
+			x_cordic: in std_logic_vector(COORD_N-1 downto 0);
+			y_cordic: in std_logic_vector(COORD_N-1 downto 0);
+			z_cordic: in std_logic_vector(COORD_N-1 downto 0);
+			valid_cordic: in std_logic;
+			addr_A_in: out std_logic_vector(ADDR_N-1 downto 0);
+			addr_B_in: out std_logic_vector(ADDR_N-1 downto 0);
+			addr_C_in: out std_logic_vector(ADDR_N-1 downto 0);
+			x_ram: out std_logic_vector(COORD_N-1 downto 0);
+			y_ram: out std_logic_vector(COORD_N-1 downto 0); 
+			z_ram: out std_logic_vector(COORD_N-1 downto 0); 
+			-- Direcciones del próximo pto a procesar
+			addr_A_out: out std_logic_vector(ADDR_N-1 downto 0);
+			addr_B_out: out std_logic_vector(ADDR_N-1 downto 0);
+			addr_C_out: out std_logic_vector(ADDR_N-1 downto 0);
+			go: in std_logic;	-- Bit para iniciar rotación
+			updating: out std_logic;
+			cant_ptos: in std_logic_vector(ADDR_N-1 downto 0);
+			load_finished: in std_logic;
+			clk: in std_logic
+	   );
+	end component ram_update_logic_3d;
+	
+	
+	component logic_ram_3d is
+		generic(
+			ADDR_N: natural := 15;
+			COORD_N: natural := 16			
+		);
+		
+		port(
+			-- Para obtener valores de la memoria
+			addr_A_out: in std_logic_vector(ADDR_N-1 downto 0);
+			addr_B_out: in std_logic_vector(ADDR_N-1 downto 0);
+			addr_C_out: in std_logic_vector(ADDR_N-1 downto 0);
+			data_A_out: out std_logic_vector(COORD_N-1 downto 0);
+			data_B_out: out std_logic_vector(COORD_N-1 downto 0);
+			data_C_out: out std_logic_vector(COORD_N-1 downto 0);
+			-- Para escribir valores de la memoria
+			addr_A_in: in std_logic_vector(ADDR_N-1 downto 0);
+			addr_B_in: in std_logic_vector(ADDR_N-1 downto 0);
+			addr_C_in: in std_logic_vector(ADDR_N-1 downto 0);
+			data_A_in: in std_logic_vector(COORD_N-1 downto 0);
+			data_B_in: in std_logic_vector(COORD_N-1 downto 0);
+			data_C_in: in std_logic_vector(COORD_N-1 downto 0);
+			write_flag: in std_logic;	
+			
+			clk: in std_logic
+		);
+	end component logic_ram_3d;
+	
+	component logica_rotacional_3d is
+	   generic (COORD_N: natural := 16; ADDR_N: natural := 9);
+	   port(
+			-- Cada pto que se termina de procesar
+			x_out: out std_logic_vector(COORD_N-1 downto 0);
+			y_out: out std_logic_vector(COORD_N-1 downto 0);
+			z_out: out std_logic_vector(COORD_N-1 downto 0);
+			valid: out std_logic;
+			-- Detección de rotación
+			ang_x_in: in std_logic_vector(15 downto 0);
+			ang_y_in: in std_logic_vector(15 downto 0);
+			ang_z_in: in std_logic_vector(15 downto 0);
+			go: in std_logic;	-- Bit para iniciar rotación
+			-- Señal para borrar la mem. de video
+			video_reset: out std_logic;
+			clk: in std_logic
+	   );
+	end component logica_rotacional_3d;
+	
+		
+	component multiplicador_hardcodeado_cordic is
+		generic (N: natural := 4);
+		port(
+			-- Dos números a multiplicar, en punto fijo
+			a: in std_logic_vector(N-1 downto 0);
+			b: in std_logic_vector(N-1 downto 0);
+			valid_in: in std_logic;
+			sign_in: in std_logic;
+			
+			
+			s: out std_logic_vector(2*N-1 downto 0);
+			valid_out: out std_logic;
+			sign_out: out std_logic;
+			clk: in std_logic;
+			flush: in std_logic
+		);	
+	end component multiplicador_hardcodeado_cordic;
+	
+	
+	component video_plot_3d is
+		generic ( COORD_N: natural := 16 );
+		port (
+			-- Entrada de coordenadas
+			coord_x: in std_logic_vector(COORD_N-1 downto 0);
+			coord_y: in std_logic_vector(COORD_N-1 downto 0);
+			coord_z: in std_logic_vector(COORD_N-1 downto 0);
+			valid: in std_logic;
+			
+			-- color: in std_logic_vector(2 downto 0);
+			
+			-- Sistema de reset del plotter
+			-- Enviar un pulso durante al menos un ciclo de reloj.
+			-- Esto hace que la memoria entre en estado RESET. Durante este estado
+			-- la memoria esperará a que termine el barrido de pantalla actual. En
+			-- el siguiente barrido, se ignorará TODA entrada y se irá borrando progresivamente
+			-- la memoria. Cuando el barrido de borrado termine, el estado pasa a READY de nuevo
+			-- y se envía un pulso de un ciclo de reloj en la salida done_rst.
+			
+			rst: in std_logic;
+			done_rst: out std_logic;
+			
+			clk: in std_logic;
+		
+			-- Salida vga
+			hs: out std_logic;
+			vs: out std_logic;
+			red_out: out std_logic_vector(2 downto 0);
+			grn_out: out std_logic_vector(2 downto 0);
+			blu_out: out std_logic_vector(1 downto 0)
+		);
+
+	end component video_plot_3d;
+	
 	
 end package;

@@ -49,7 +49,7 @@ architecture logica_rotacional_arq of logica_rotacional is
 begin
 	-- initHardcoded que inicia la RAM. MATAR LUEGO
 	myIH: init_hardcoded
-		generic map(COORD_N => COORD_N, ADDR_N => ADDR_N, CANT_PUNTOS => 4)
+		generic map(COORD_N => COORD_N, ADDR_N => ADDR_N, CANT_PUNTOS => 256)
 		port map (mux_ram_I(2*(ADDR_N+COORD_N)-1 downto 2*ADDR_N+COORD_N), 
 		mux_ram_I(2*ADDR_N+COORD_N-1 downto 2*ADDR_N), mux_ram_I(2*ADDR_N-1 downto ADDR_N), 
 		mux_ram_I(ADDR_N-1 downto 0), init_done, rul_cantptos, clk);	

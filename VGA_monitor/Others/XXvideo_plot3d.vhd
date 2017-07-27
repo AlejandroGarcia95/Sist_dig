@@ -5,12 +5,13 @@ use work.includes.all;
 
 -- Convierte las coordenadas en pixeles y las guarda en memoria de video.
 -- Si valid = '0', ignora la entrada.
-entity video_plot is
+entity video_plot_3d is
 	generic ( COORD_N: natural := 16 );
 	port (
 		-- Entrada de coordenadas
 		coord_x: in std_logic_vector(COORD_N-1 downto 0);
 		coord_y: in std_logic_vector(COORD_N-1 downto 0);
+		coord_z: in std_logic_vector(COORD_N-1 downto 0);
 		valid: in std_logic;
 		
 		-- color: in std_logic_vector(2 downto 0);
@@ -36,9 +37,9 @@ entity video_plot is
 		blu_out: out std_logic_vector(1 downto 0)
 	);
 
-end video_plot;
+end video_plot_3d;
 
-architecture video_plot_arq of video_plot is
+architecture video_plot_3d_arq of video_plot_3d is
 	
 	-- Salida y entrada de la memoria RAM
 	signal mem_out: std_logic_vector(0 downto 0) := (others => '0');
@@ -109,11 +110,12 @@ begin
 	-- signal is being received.
 	
 	-- Conversor de coordenadas a pixeles
-	myCS: address_generator
+	myCS: address_generator_3d
 		generic map(COORD_N => COORD_N)
 		port map (
 			x_coord => coord_x,
 			y_coord => coord_y,
+			z_coord => coord_z,
 			pixel_x => address_x,
 			pixel_y => address_y,
 			ena => '1'
@@ -127,7 +129,7 @@ begin
 	mem_in <= "1" when (resetting = '0') else "0";
 
 	
-end video_plot_arq;
+end video_plot_3d_arq;
 
 
 
