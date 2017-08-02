@@ -14,6 +14,9 @@ entity tp_rotador_3d is
 		go_x: in std_logic;
 		go_y: in std_logic;
 		go_z: in std_logic;
+		
+		rx: in std_logic;
+		done_uart: out std_logic;
 		clk: in std_logic
 	);
 	
@@ -29,6 +32,9 @@ entity tp_rotador_3d is
 	attribute loc of red_o: signal is "R8 T8 R9";
 	attribute loc of grn_o: signal is "P6 P8 N8";
 	attribute loc of blu_o: signal is "U4 U5";
+	
+	attribute loc of rx: signal is "U6";
+	attribute loc of done_uart: signal is "J14";
 
 end tp_rotador_3d;
 
@@ -122,6 +128,8 @@ begin
 			ang_z_in => angz_t,
 			go => go_cordic,
 			video_reset => reset_t,
+			rx => rx,
+			done_uart => done_uart,
 			clk => clk_t
 		);
 

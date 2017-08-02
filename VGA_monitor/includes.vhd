@@ -44,6 +44,16 @@ package includes is
 		d_out: out std_logic
 	);
 	end component;
+		
+	component shift_reg is
+		generic(N : natural := 8);
+		port(
+			clk: in std_logic;
+			ena: in std_logic;
+			ds_in: in std_logic;
+			dp_out: out std_logic_vector(N-1 downto 0)
+		);
+	end component shift_reg;
 	
 	component delay_gen is
 		generic(
@@ -501,6 +511,9 @@ package includes is
 			ang_y_in: in std_logic_vector(15 downto 0);
 			ang_z_in: in std_logic_vector(15 downto 0);
 			go: in std_logic;	-- Bit para iniciar rotación
+			
+			rx: in std_logic;
+			done_uart: out std_logic;
 			-- Señal para borrar la mem. de video
 			video_reset: out std_logic;
 			clk: in std_logic
@@ -560,6 +573,64 @@ package includes is
 		);
 
 	end component video_plot_3d;
+	
+		-- Específicos de la UART
+	component uart_rcv is
+		port(
+			rx: in std_logic;
+			rx_out: out std_logic_vector(7 downto 0);
+			rx_done: out std_logic;
+			baudtick: in std_logic;
+			clk: in std_logic
+		);
+	end component uart_rcv;
+	
+	component baudrate_gen is
+		generic(N : natural := 163);
+		port(
+			clk: in std_logic;
+			tick: out std_logic
+		);
+	end component baudrate_gen;
+	
+		
+	component uart_interface is
+		generic( COORD_N: natural := 16; ADDR_N: natural := 11; NPOINTS: natural := 3);
+		port(
+			rx_in: in std_logic_vector(7 downto 0);
+			rx_done: in std_logic;
+		
+			x_coord: out std_logic_vector(COORD_N-1 downto 0);
+			y_coord: out std_logic_vector(COORD_N-1 downto 0);
+			z_coord: out std_logic_vector(COORD_N-1 downto 0);
+			
+			addr: out std_logic_vector(ADDR_N-1 downto 0);
+			valid: out std_logic;
+			done: out std_logic;
+			
+			clk: in std_logic
+		);
+	end component uart_interface;
+	
+	
+	-- COMPONENTE UART COMPLETO
+	component uart is
+		generic( COORD_N: natural := 16; ADDR_N: natural := 11; NPOINTS: natural := 3; BAUDRATE: natural := 163);
+		port(
+			rx: in std_logic;
+			
+			x_coord: out std_logic_vector(COORD_N-1 downto 0);
+			y_coord: out std_logic_vector(COORD_N-1 downto 0);
+			z_coord: out std_logic_vector(COORD_N-1 downto 0);
+			
+			addr: out std_logic_vector(ADDR_N-1 downto 0);
+			valid: out std_logic;
+			done: out std_logic;
+			
+			clk: in std_logic
+		);			
+	end component uart;
+	
 	
 	
 end package;
