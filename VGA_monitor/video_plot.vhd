@@ -104,10 +104,7 @@ begin
 		
 		done_rst => done_rst
 		);
-	-- Modify address_generator outputs to
-	-- address video_ram only when not reset
-	-- signal is being received.
-	
+			
 	-- Conversor de coordenadas a pixeles
 	myCS: address_generator
 		generic map(COORD_N => COORD_N)

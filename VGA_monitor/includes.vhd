@@ -1,8 +1,8 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-package includes is
 
+package includes is
 	component contador is
 		generic( N : natural := 2 );
 		port (
